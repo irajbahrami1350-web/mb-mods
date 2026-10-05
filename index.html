@@ -1,0 +1,1580 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MB MODS 🎮🛠️ ULTRA</title>
+<style>
+*{box-sizing:border-box}
+:root{--p:#00eaff;--r:#ff1744;--g:#35ff7a;--bg:#05060a;--card:#0c1119;--line:#1d2b3c}
+body{margin:0;background:radial-gradient(circle at 20% 0,#09243355,transparent 35%),var(--bg);color:#eee;font-family:Tahoma,Arial,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:20;background:#060910ee;backdrop-filter:blur(15px);border-bottom:1px solid #203044}
+.nav{max-width:1250px;margin:auto;padding:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.logo{font-size:22px;font-weight:1000;color:var(--p);text-shadow:0 0 20px #00eaff88}
+.navlinks{display:flex;gap:6px;flex-wrap:wrap;margin-right:auto}
+.navlinks button,.mini{background:#0d1622;color:#ddd;border:1px solid #23364c;border-radius:11px;padding:9px 11px}
+.navlinks button:hover,.mini:hover{border-color:var(--p);color:#fff}
+main{max-width:1250px;margin:auto;padding:25px 14px 80px}
+.hero{border:1px solid #244158;border-radius:28px;padding:38px 22px;background:radial-gradient(circle at 85% 15%,#ff174433,transparent 30%),radial-gradient(circle at 15% 90%,#00eaff25,transparent 35%),#090e16;box-shadow:0 0 60px #00eaff0c}
+.hero h1{font-size:clamp(35px,8vw,70px);margin:0}
+.hero h1 span{color:var(--r);text-shadow:0 0 25px #ff1744aa}
+.hero p{line-height:2;color:#aebaca}
+.actions{display:flex;gap:9px;flex-wrap:wrap}
+.btn{border:0;border-radius:13px;padding:11px 16px;background:linear-gradient(135deg,var(--p),#6578ff);font-weight:900;color:#001018}
+.btn.red{background:linear-gradient(135deg,#ff1744,#ff633d);color:#fff}
+.btn.dark{background:#101a28;color:#fff;border:1px solid #2a3b51}
+.section{margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:15px}
+.card,.pagebox{background:linear-gradient(180deg,#0d141e,#080c12);border:1px solid var(--line);border-radius:19px;padding:15px;box-shadow:0 12px 35px #0005}
+.card:hover{transform:translateY(-3px);border-color:#31516e}
+.cover{height:135px;border-radius:15px;background:linear-gradient(135deg,#142538,#080b11);display:flex;align-items:center;justify-content:center;font-size:62px;overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover}
+.tag{display:inline-block;background:#101d2b;border:1px solid #214357;color:var(--p);padding:4px 8px;border-radius:20px;font-size:11px;margin-top:9px}
+.price{font-size:20px;font-weight:900;color:var(--g);margin:10px 0}
+.old{text-decoration:line-through;color:#6e7887;font-size:12px}
+.muted{color:#8997a8;line-height:1.9;font-size:13px}
+.search{width:100%;padding:13px;background:#070b11;color:#fff;border:1px solid #263a51;border-radius:14px;margin:10px 0 16px;outline:none}
+.form{display:grid;gap:10px;max-width:850px}
+.form input,.form textarea,.form select{width:100%;background:#070b11;color:#fff;border:1px solid #263a51;border-radius:12px;padding:12px;outline:none}
+.form textarea{min-height:110px;resize:vertical}
+.form input:focus,.form textarea:focus,.form select:focus{border-color:var(--p)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.notice{background:#101925;border:1px solid #26394f;border-radius:13px;padding:12px;margin:10px 0;line-height:1.9}
+.adminnav{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}
+table{width:100%;border-collapse:collapse}
+th,td{border-bottom:1px solid #1a2838;padding:10px;text-align:right;font-size:13px}
+th{color:var(--p)}
+.ok{color:var(--g)}.danger{color:#ff5872}
+.modal{position:fixed;inset:0;background:#000c;display:flex;align-items:center;justify-content:center;padding:15px;z-index:99}
+.modal>div{width:100%;max-width:650px;max-height:90vh;overflow:auto;background:#0b111a;border:1px solid #2b4762;border-radius:20px;padding:20px}
+.hidden{display:none!important}
+.toast{position:fixed;bottom:18px;left:18px;z-index:999;background:#101a26;border:1px solid #29435c;border-radius:12px;padding:12px 16px;box-shadow:0 10px 30px #0008}
+footer{text-align:center;color:#647184;padding:30px}
+@media(max-width:650px){
+.nav{align-items:flex-start}.navlinks{width:100%;order:3}
+.navlinks button{flex:1;font-size:11px}.two{grid-template-columns:1fr}
+.grid{grid-template-columns:repeat(2,1fr)}.card{padding:10px}.cover{height:105px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav">
+<div class="logo">MB MODS 🎮🛠️</div>
+<div class="navlinks">
+<button onclick="go('#/home')">🏠 خانه</button>
+<button onclick="go('#/games')">🎮 بازی‌ها</button>
+<button onclick="go('#/news')">📰 اخبار</button>
+<button onclick="go('#/search')">🔎 جستجو</button>
+<button onclick="go('#/favorites')">❤️ علاقه‌مندی</button>
+<button onclick="go('#/orders')">🛒 سفارش‌ها</button>
+<button onclick="go(localStorage.mbAdmin?'#/admin':'#/admin/login')">⚙️ مدیریت</button>
+</div>
+</div>
+</header>
+
+<main id="app"></main>
+<footer>MB MODS ULTRA 🎮 • نسخه تک‌فایلی</footer>
+<div id="toast" class="toast hidden"></div>
+
+<script>
+/* =========================
+   MB MODS ULTRA V4
+   ========================= */
+
+const K={
+ games:"mb_games",
+ news:"mb_news",
+ users:"mb_users",
+ orders:"mb_orders",
+ settings:"mb_settings",
+ fav:"mb_fav"
+};
+
+const seedGames=[
+{
+ id:1,
+ title:"رانندگان اروپا ۳",
+ icon:"🚛",
+ genre:"شبیه‌سازی",
+ platform:"Android",
+ version:"3.2",
+ price:50000,
+ old:70000,
+ size:"180 MB",
+ cover:"",
+ desc:"صفحه محصول نمونه MB MODS. فقط فایل‌هایی را منتشر کنید که مجوز قانونی توزیع آن‌ها را دارید.",
+ guide:"پس از دریافت فایل، طبق راهنمای نصب محصول عمل کنید.",
+ file:""
+},
+{
+ id:2,
+ title:"Minecraft",
+ icon:"⛏️",
+ genre:"Sandbox",
+ platform:"Android / PC",
+ version:"Demo",
+ price:0,
+ old:0,
+ size:"—",
+ cover:"",
+ desc:"صفحه معرفی Minecraft.",
+ guide:"برای نسخه قانونی از منبع رسمی بازی استفاده کنید.",
+ file:""
+},
+{
+ id:3,
+ title:"Among Us",
+ icon:"👨‍🚀",
+ genre:"Party",
+ platform:"Android",
+ version:"Latest",
+ price:30000,
+ old:45000,
+ size:"—",
+ cover:"",
+ desc:"محصول نمونه.",
+ guide:"راهنمای نصب محصول را قبل از انتشار تکمیل کنید.",
+ file:""
+}
+];
+
+const seedNews=[
+{id:1,title:"🚨 شروع رسمی MB MODS",text:"به MB MODS خوش آمدید؛ اخبار بازی و محصولات جدید اینجا منتشر می‌شوند.",date:"1405/07/12"},
+{id:2,title:"🎮 بخش بازی‌ها فعال شد",text:"هر بازی می‌تواند صفحه اختصاصی، قیمت، مشخصات و راهنمای نصب داشته باشد.",date:"1405/07/13"}
+];
+
+function get(k,d=[]){
+ try{return JSON.parse(localStorage.getItem(k)) ?? d}
+ catch(e){return d}
+}
+
+function set(k,v){
+ try{
+  localStorage.setItem(k,JSON.stringify(v));
+  return true
+ }catch(e){
+  toast("حافظه مرورگر پر شده است ❌");
+  return false
+ }
+}
+
+function esc(s=""){
+ return String(s).replace(/[&<>"']/g,m=>({
+ "&":"&amp;",
+ "<":"&lt;",
+ ">":"&gt;",
+ '"':"&quot;",
+ "'":"&#039;"
+ }[m]));
+}
+
+function money(n){
+ return Number(n)?Number(n).toLocaleString("fa-IR")+" تومان":"رایگان";
+}
+
+function go(h){
+ location.hash=h;
+}
+
+function toast(x){
+ const t=document.getElementById("toast");
+ t.textContent=x;
+ t.classList.remove("hidden");
+ setTimeout(()=>t.classList.add("hidden"),2500);
+}
+
+if(!localStorage[K.games])set(K.games,seedGames);
+if(!localStorage[K.news])set(K.news,seedNews);
+if(!localStorage[K.users])set(K.users,[]);
+if(!localStorage[K.orders])set(K.orders,[]);
+if(!localStorage[K.fav])set(K.fav,[]);
+if(!localStorage[K.settings])set(K.settings,{
+ card:"",
+ owner:"",
+ account:"",
+ phone:"",
+ description:""
+});
+
+/* =========================
+   HOME
+   ========================= */
+
+function home(){
+
+ const games=get(K.games);
+ const news=get(K.news);
+
+ return `
+ <section class="hero">
+   <h1>MB <span>MODS</span> 🎮</h1>
+   <p>
+   پورتال گیمینگ خفن برای معرفی بازی، مود، اخبار و محصولات دیجیتال.
+   طراحی شده برای موبایل و قابل مدیریت از داخل پنل مدیریت.
+   </p>
+
+   <div class="actions">
+    <button class="btn red" onclick="go('#/games')">🔥 ورود به بازی‌ها</button>
+    <button class="btn dark" onclick="go('#/news')">📰 آخرین اخبار</button>
+   </div>
+ </section>
+
+ <div class="section">
+  <h2>🔥 بازی‌های ویژه</h2>
+  <div class="grid">
+   ${games.slice(0,6).map(gameCard).join("")}
+  </div>
+ </div>
+
+ <div class="section">
+  <h2>⚡ آخرین اخبار</h2>
+  <div class="grid">
+   ${news.slice(0,4).map(n=>`
+    <article class="card">
+      <span class="tag">${esc(n.date)}</span>
+      <h3>${esc(n.title)}</h3>
+      <p class="muted">${esc(n.text)}</p>
+      <button class="mini" onclick="go('#/news/${n.id}')">ادامه ←</button>
+    </article>
+   `).join("")}
+  </div>
+ </div>
+ `;
+}
+
+/* =========================
+   GAME CARD
+   ========================= */
+
+function gameCard(g){
+
+ return `
+ <article class="card">
+
+  <div class="cover">
+   ${g.cover?`<img src="${g.cover}" alt="">`:esc(g.icon||"🎮")}
+  </div>
+
+  <span class="tag">${esc(g.genre)} • ${esc(g.platform)}</span>
+
+  <h3>${esc(g.title)}</h3>
+
+  <p class="muted">
+   ${esc(g.size||"—")} • نسخه ${esc(g.version||"—")}
+  </p>
+
+  <div class="price">
+   ${money(g.price)}
+   ${g.old?`<span class="old">${money(g.old)}</span>`:""}
+  </div>
+
+  <button class="btn" onclick="go('#/games/${g.id}')">
+   مشاهده بازی
+  </button>
+
+ </article>
+ `;
+}
+
+/* =========================
+   GAMES
+   ========================= */
+
+function games(){
+
+ return `
+ <h1>🎮 بازی‌ها</h1>
+
+ <input class="search"
+  placeholder="نام بازی، ژانر یا پلتفرم..."
+  oninput="filterGames(this.value)">
+
+ <div id="gameGrid" class="grid">
+  ${get(K.games).map(gameCard).join("")}
+ </div>
+ `;
+}
+
+function filterGames(q){
+
+ const x=q.toLowerCase();
+
+ const g=get(K.games).filter(a=>
+  (a.title+" "+a.genre+" "+a.platform)
+  .toLowerCase()
+  .includes(x)
+ );
+
+ document.getElementById("gameGrid").innerHTML=
+  g.map(gameCard).join("") ||
+  `<div class="notice">چیزی پیدا نشد 😐</div>`;
+}
+
+/* =========================
+   GAME DETAIL
+   ========================= */
+
+function gameDetail(id){
+
+ const g=get(K.games).find(x=>x.id==id);
+
+ if(!g)return shell("خطا","بازی پیدا نشد.");
+
+ const fav=get(K.fav);
+
+ return `
+ <div class="pagebox">
+
+  <div class="cover" style="height:230px">
+   ${g.cover?`<img src="${g.cover}">`:esc(g.icon||"🎮")}
+  </div>
+
+  <h1>${esc(g.title)}</h1>
+
+  <p class="muted">${esc(g.desc)}</p>
+
+  <div class="two">
+   <div>
+    <b>ژانر:</b> ${esc(g.genre)}<br>
+    <b>پلتفرم:</b> ${esc(g.platform)}
+   </div>
+
+   <div>
+    <b>نسخه:</b> ${esc(g.version)}<br>
+    <b>حجم:</b> ${esc(g.size)}
+   </div>
+  </div>
+
+  <div class="price">
+   ${money(g.price)}
+   ${g.old?`<span class="old">${money(g.old)}</span>`:""}
+  </div>
+
+  <div class="notice">
+   <b>📘 راهنمای نصب:</b><br>
+   ${esc(g.guide)}
+  </div>
+
+  <div class="actions">
+
+   ${
+    g.price
+    ?
+    `<button class="btn red" onclick="buy(${g.id})">🛒 خرید و ثبت سفارش</button>`
+    :
+    `<button class="btn" onclick="toast('این محصول رایگان است؛ لینک رسمی را استفاده کنید.')">📥 دریافت</button>`
+   }
+
+   <button class="btn dark" onclick="toggleFav(${g.id})">
+    ${fav.includes(g.id)?"💔 حذف از علاقه‌مندی":"❤️ علاقه‌مندی"}
+   </button>
+
+  </div>
+
+ </div>
+ `;
+}
+
+/* =========================
+   FAVORITES
+   ========================= */
+
+function toggleFav(id){
+
+ let f=get(K.fav);
+
+ f=f.includes(id)
+  ?f.filter(x=>x!=id)
+  :[...f,id];
+
+ set(K.fav,f);
+
+ toast("ذخیره شد ❤️");
+ render();
+}
+
+function favorites(){
+
+ const f=get(K.fav);
+ const g=get(K.games).filter(x=>f.includes(x.id));
+
+ return `
+ <h1>❤️ علاقه‌مندی‌ها</h1>
+
+ <div class="grid">
+  ${g.map(gameCard).join("")||
+  `<div class="notice">هنوز بازی‌ای اضافه نکردی.</div>`}
+ </div>
+ `;
+}
+
+/* =========================
+   NEWS
+   ========================= */
+
+function news(){
+
+ return `
+ <h1>📰 اخبار</h1>
+
+ <div class="grid">
+ ${get(K.news).map(n=>`
+
+  <article class="card">
+   <span class="tag">${esc(n.date)}</span>
+   <h2>${esc(n.title)}</h2>
+   <p class="muted">${esc(n.text)}</p>
+
+   <button class="btn"
+    onclick="go('#/news/${n.id}')">
+    خواندن خبر
+   </button>
+  </article>
+
+ `).join("")}
+ </div>
+ `;
+}
+
+function newsDetail(id){
+
+ const n=get(K.news).find(x=>x.id==id);
+
+ if(!n)return shell("خطا","خبر پیدا نشد.");
+
+ return `
+ <div class="pagebox">
+  <span class="tag">${esc(n.date)}</span>
+  <h1>${esc(n.title)}</h1>
+  <p class="muted" style="font-size:16px">${esc(n.text)}</p>
+  <button class="btn" onclick="go('#/news')">بازگشت</button>
+ </div>
+ `;
+}
+
+/* =========================
+   SEARCH
+   ========================= */
+
+function searchPage(){
+
+ return `
+ <h1>🔎 جستجوی سریع</h1>
+
+ <input class="search"
+  placeholder="نام بازی یا خبر..."
+  oninput="globalSearch(this.value)">
+
+ <div id="results"></div>
+ `;
+}
+
+function globalSearch(q){
+
+ const r=document.getElementById("results");
+
+ if(!q){
+  r.innerHTML="";
+  return;
+ }
+
+ const gs=get(K.games).filter(x=>x.title.includes(q));
+ const ns=get(K.news).filter(x=>x.title.includes(q));
+
+ r.innerHTML=`
+
+ <h3>🎮 بازی‌ها</h3>
+
+ <div class="grid">
+  ${gs.map(gameCard).join("")||"موردی نیست"}
+ </div>
+
+ <h3>📰 اخبار</h3>
+
+ ${ns.map(n=>`
+  <div class="notice">
+   ${esc(n.title)}
+   <button class="mini" onclick="go('#/news/${n.id}')">
+    باز کن
+   </button>
+  </div>
+ `).join("")||"موردی نیست"}
+
+ `;
+}
+
+/* =========================
+   REGISTER
+   ========================= */
+
+function register(){
+
+ return `
+ <div class="pagebox">
+
+ <h1>📝 ساخت حساب</h1>
+
+ <form class="form" onsubmit="doRegister(event)">
+
+  <input id="regName" required placeholder="نام کاربری">
+
+  <input id="regPhone" required placeholder="شماره موبایل">
+
+  <input id="regPass" required type="password" placeholder="رمز عبور">
+
+  <label>
+   <input id="regAgree" type="checkbox" required>
+   قوانین سایت را قبول دارم.
+  </label>
+
+  <button class="btn" type="submit">ساخت حساب</button>
+
+ </form>
+
+ <p class="muted">
+  حساب برای دمو در حافظه همین مرورگر ذخیره می‌شود.
+ </p>
+
+ </div>
+ `;
+}
+
+function doRegister(e){
+
+ e.preventDefault();
+
+ const users=get(K.users);
+
+ const name=document.getElementById("regName").value.trim();
+
+ if(users.some(x=>x.name===name)){
+  toast("این نام کاربری وجود دارد.");
+  return;
+ }
+
+ users.push({
+  id:Date.now(),
+  name,
+  phone:document.getElementById("regPhone").value,
+  pass:document.getElementById("regPass").value
+ });
+
+ set(K.users,users);
+
+ toast("حساب ساخته شد ✅");
+ go("#/login");
+}
+
+/* =========================
+   LOGIN
+   ========================= */
+
+function login(){
+
+ return `
+ <div class="pagebox">
+
+ <h1>🔐 ورود</h1>
+
+ <form class="form" onsubmit="doLogin(event)">
+
+  <input id="loginName" required placeholder="نام کاربری">
+
+  <input id="loginPass" required type="password" placeholder="رمز عبور">
+
+  <button class="btn" type="submit">ورود</button>
+
+ </form>
+
+ <br>
+
+ <button class="mini" onclick="go('#/register')">
+  ساخت حساب جدید
+ </button>
+
+ </div>
+ `;
+}
+
+function doLogin(e){
+
+ e.preventDefault();
+
+ const name=document.getElementById("loginName").value;
+ const pass=document.getElementById("loginPass").value;
+
+ const u=get(K.users).find(x=>x.name===name&&x.pass===pass);
+
+ if(!u){
+  toast("نام کاربری یا رمز اشتباه است ❌");
+  return;
+ }
+
+ localStorage.mbUser=JSON.stringify(u);
+
+ toast("خوش آمدی 🎮");
+ go("#/home");
+}
+
+/* =========================
+   ORDERS
+   ========================= */
+
+function buy(id){
+
+ if(!localStorage.mbUser){
+  toast("ابتدا وارد حساب شوید 🔐");
+  go("#/login");
+  return;
+ }
+
+ const g=get(K.games).find(x=>x.id==id);
+
+ if(!g)return;
+
+ if(!g.price){
+  toast("این محصول رایگان است.");
+  return;
+ }
+
+ const orders=get(K.orders);
+
+ const o={
+  id:Date.now(),
+  gameId:g.id,
+  user:JSON.parse(localStorage.mbUser).name,
+  amount:g.price,
+  status:"pending",
+  receipt:"",
+  date:new Date().toLocaleString("fa-IR")
+ };
+
+ orders.push(o);
+ set(K.orders,orders);
+
+ toast("سفارش ثبت شد 🛒");
+ go("#/orders");
+}
+
+function orders(){
+
+ if(!localStorage.mbUser){
+  return shell(
+   "🔐 سفارش‌ها",
+   `<p>برای دیدن سفارش‌ها وارد حساب شوید.</p>
+    <button class="btn" onclick="go('#/login')">ورود</button>`
+  );
+ }
+
+ const user=JSON.parse(localStorage.mbUser).name;
+
+ const os=get(K.orders).filter(x=>x.user===user);
+ const settings=get(K.settings);
+
+ return `
+ <h1>🛒 سفارش‌های من</h1>
+
+ <div class="notice">
+
+ <b>💳 اطلاعات پرداخت</b><br><br>
+
+ ${
+ settings.card
+ ?`
+ شماره کارت:
+ <b>${esc(settings.card)}</b><br>
+ صاحب حساب:
+ <b>${esc(settings.owner)}</b><br>
+ ${settings.account?`شماره حساب: <b>${esc(settings.account)}</b><br>`:""}
+ `
+ :"اطلاعات پرداخت هنوز توسط مدیریت تنظیم نشده است."
+ }
+
+ </div>
+
+ <div class="grid">
+
+ ${os.map(o=>{
+
+  const g=get(K.games).find(x=>x.id==o.gameId);
+
+  return `
+  <article class="card">
+
+   <h3>${esc(g?.title||"محصول حذف‌شده")}</h3>
+
+   <div class="price">${money(o.amount)}</div>
+
+   <p class="muted">
+    کد سفارش: ${o.id}<br>
+    تاریخ: ${esc(o.date)}<br>
+    وضعیت:
+    <b class="${o.status==='paid'?'ok':''}">
+     ${statusText(o.status)}
+    </b>
+   </p>
+
+   ${
+    o.status==="pending"
+    ?
+    `<button class="btn" onclick="uploadReceipt(${o.id})">
+      📸 ارسال رسید
+     </button>`
+    :""
+   }
+
+   ${
+    o.status==="paid"&&g?.file
+    ?
+    `<button class="btn" onclick="downloadProduct(${o.id})">
+      📥 دانلود محصول
+     </button>`
+    :""
+   }
+
+  </article>
+  `
+
+ }).join("")||`<div class="notice">هنوز سفارشی نداری.</div>`}
+
+ </div>
+ `;
+}
+
+function statusText(s){
+ return {
+  pending:"منتظر پرداخت",
+  review:"در حال بررسی رسید",
+  paid:"پرداخت تأیید شد",
+  rejected:"رسید رد شد"
+ }[s]||s;
+}
+
+/* =========================
+   RECEIPT
+   ========================= */
+
+function uploadReceipt(id){
+
+ const input=document.createElement("input");
+
+ input.type="file";
+ input.accept="image/*,.pdf";
+
+ input.onchange=()=>{
+
+  const file=input.files[0];
+
+  if(!file)return;
+
+  if(file.size>1200*1024){
+   toast("رسید باید کمتر از 1.2MB باشد.");
+   return;
+  }
+
+  const reader=new FileReader();
+
+  reader.onload=()=>{
+
+   const os=get(K.orders);
+
+   const o=os.find(x=>x.id==id);
+
+   if(!o)return;
+
+   o.receipt=reader.result;
+   o.status="review";
+
+   set(K.orders,os);
+
+   toast("رسید ارسال شد ✅");
+   render();
+  };
+
+  reader.readAsDataURL(file);
+ };
+
+ input.click();
+}
+
+/* =========================
+   ADMIN LOGIN
+   ========================= */
+
+function adminLogin(){
+
+ return `
+ <div class="pagebox">
+
+   <h1>🔐 ورود مدیر</h1>
+
+   <p class="muted">
+     برای ورود به پنل مدیریت، اطلاعات مدیر را وارد کنید.
+   </p>
+
+   <form class="form" onsubmit="doAdminLogin(event)">
+
+     <input
+       id="adminName"
+       required
+       autocomplete="username"
+       placeholder="👤 نام کاربری مدیر">
+
+     <input
+       id="adminPass"
+       required
+       type="password"
+       autocomplete="current-password"
+       placeholder="🔑 رمز عبور">
+
+     <button class="btn red" type="submit">
+       🚀 ورود به پنل مدیریت
+     </button>
+
+   </form>
+
+ </div>
+ `;
+}
+
+function doAdminLogin(e){
+
+ e.preventDefault();
+
+ const n=document.getElementById("adminName").value;
+ const p=document.getElementById("adminPass").value;
+
+ if(n==="admin"&&p==="MBMODS@2026"){
+  localStorage.mbAdmin="1";
+  toast("ورود موفق بود 👑");
+  go("#/admin");
+ }else{
+  toast("اطلاعات مدیریت اشتباه است ❌");
+ }
+}
+
+/* =========================
+   ADMIN
+   ========================= */
+
+function admin(){
+
+ if(!localStorage.mbAdmin){
+  go("#/admin/login");
+  return "";
+ }
+
+ const games=get(K.games);
+ const news=get(K.news);
+ const orders=get(K.orders);
+ const users=get(K.users);
+
+ return `
+ <h1>👑 پنل مدیریت MB MODS</h1>
+
+ <div class="adminnav">
+  <button class="mini" onclick="go('#/admin')">📊 داشبورد</button>
+  <button class="mini" onclick="go('#/admin/games')">🎮 بازی‌ها</button>
+  <button class="mini" onclick="go('#/admin/news')">📰 اخبار</button>
+  <button class="mini" onclick="go('#/admin/orders')">🛒 سفارش‌ها</button>
+  <button class="mini" onclick="go('#/admin/users')">👥 کاربران</button>
+  <button class="mini" onclick="go('#/admin/settings')">💳 تنظیمات پرداخت</button>
+  <button class="mini" onclick="adminLogout()">🚪 خروج</button>
+ </div>
+
+ <div class="grid">
+
+  <div class="card"><h2>🎮</h2><b>${games.length}</b><p class="muted">بازی</p></div>
+  <div class="card"><h2>📰</h2><b>${news.length}</b><p class="muted">خبر</p></div>
+  <div class="card"><h2>🛒</h2><b>${orders.length}</b><p class="muted">سفارش</p></div>
+  <div class="card"><h2>👥</h2><b>${users.length}</b><p class="muted">کاربر</p></div>
+
+ </div>
+
+ <div class="section">
+  <div class="pagebox">
+   <h2>⚡ دسترسی سریع</h2>
+   <div class="actions">
+    <button class="btn" onclick="go('#/admin/games')">➕ افزودن بازی</button>
+    <button class="btn" onclick="go('#/admin/news')">➕ افزودن خبر</button>
+    <button class="btn" onclick="go('#/admin/settings')">💳 تنظیم پرداخت</button>
+   </div>
+  </div>
+ </div>
+ `;
+}
+
+function adminLogout(){
+ localStorage.removeItem("mbAdmin");
+ toast("خارج شدی.");
+ go("#/home");
+}
+
+/* =========================
+   ADMIN GAMES
+   ========================= */
+
+function adminGames(){
+
+ const gs=get(K.games);
+
+ return `
+ <div class="pagebox">
+
+ <h1>🎮 مدیریت بازی‌ها</h1>
+
+ <form class="form" onsubmit="addGame(event)">
+
+  <input id="gTitle" required placeholder="نام بازی">
+
+  <div class="two">
+   <input id="gGenre" placeholder="ژانر">
+   <input id="gPlatform" placeholder="پلتفرم">
+  </div>
+
+  <div class="two">
+   <input id="gVersion" placeholder="نسخه">
+   <input id="gSize" placeholder="حجم">
+  </div>
+
+  <div class="two">
+   <input id="gPrice" type="number" min="0" placeholder="قیمت تومان">
+   <input id="gOld" type="number" min="0" placeholder="قیمت قبلی">
+  </div>
+
+  <input id="gIcon" placeholder="ایموجی آیکون، مثلا 🎮">
+
+  <label>🖼️ کاور بازی</label>
+  <input id="gCover" type="file" accept="image/*">
+
+  <textarea id="gDesc" placeholder="توضیحات کامل بازی"></textarea>
+
+  <textarea id="gGuide" placeholder="راهنمای نصب"></textarea>
+
+  <label>📦 فایل بازی/مود</label>
+  <input id="gFile" type="file">
+
+  <button class="btn red">➕ افزودن محصول</button>
+
+ </form>
+
+ <div class="notice">
+  ⚠️ این نسخه فایل را داخل LocalStorage مرورگر ذخیره می‌کند.
+  برای فایل‌های حجیم مناسب نیست.
+ </div>
+
+ <hr>
+
+ <div class="grid">
+ ${gs.map(g=>`
+  <article class="card">
+
+   <div class="cover">
+    ${g.cover?`<img src="${g.cover}">`:esc(g.icon||"🎮")}
+   </div>
+
+   <h3>${esc(g.title)}</h3>
+
+   <div class="price">${money(g.price)}</div>
+
+   <div class="actions">
+    <button class="mini" onclick="editGame(${g.id})">✏️ ویرایش</button>
+    <button class="mini danger" onclick="deleteGame(${g.id})">🗑️ حذف</button>
+   </div>
+
+  </article>
+ `).join("")}
+ </div>
+
+ </div>
+ `;
+}
+
+/* =========================
+   ADD GAME
+   ========================= */
+
+function addGame(e){
+
+ e.preventDefault();
+
+ const file=document.getElementById("gFile").files[0];
+ const cover=document.getElementById("gCover").files[0];
+
+ if(file && file.size>5*1024*1024){
+  toast("فایل بازی برای LocalStorage باید کمتر از 5MB باشد.");
+  return;
+ }
+
+ const read=(f,cb)=>{
+  if(!f){cb("");return}
+  const r=new FileReader();
+  r.onload=()=>cb(r.result);
+  r.readAsDataURL(f);
+ };
+
+ read(cover,coverData=>{
+
+  read(file,fileData=>{
+
+   const gs=get(K.games);
+
+   gs.push({
+    id:Date.now(),
+    title:document.getElementById("gTitle").value,
+    genre:document.getElementById("gGenre").value,
+    platform:document.getElementById("gPlatform").value,
+    version:document.getElementById("gVersion").value,
+    size:document.getElementById("gSize").value,
+    price:Number(document.getElementById("gPrice").value)||0,
+    old:Number(document.getElementById("gOld").value)||0,
+    icon:document.getElementById("gIcon").value||"🎮",
+    cover:coverData,
+    desc:document.getElementById("gDesc").value,
+    guide:document.getElementById("gGuide").value,
+    file:fileData
+   });
+
+   if(set(K.games,gs)){
+    toast("بازی اضافه شد 🎮");
+    go("#/admin/games");
+   }
+
+  });
+
+ });
+
+}
+
+/* =========================
+   EDIT GAME
+   ========================= */
+
+function editGame(id){
+
+ const g=get(K.games).find(x=>x.id==id);
+
+ if(!g)return;
+
+ const title=prompt("نام بازی:",g.title);
+ if(title===null)return;
+
+ const price=prompt("قیمت تومان:",g.price);
+ if(price===null)return;
+
+ const desc=prompt("توضیحات:",g.desc);
+ if(desc===null)return;
+
+ g.title=title;
+ g.price=Number(price)||0;
+ g.desc=desc;
+
+ set(K.games,get(K.games));
+
+ toast("بازی ویرایش شد ✏️");
+ render();
+}
+
+function deleteGame(id){
+
+ if(!confirm("این بازی حذف شود؟"))return;
+
+ set(K.games,get(K.games).filter(x=>x.id!=id));
+
+ toast("بازی حذف شد 🗑️");
+ render();
+}
+
+/* =========================
+   ADMIN NEWS
+   ========================= */
+
+function adminNews(){
+
+ return `
+ <div class="pagebox">
+
+ <h1>📰 مدیریت اخبار</h1>
+
+ <form class="form" onsubmit="addNews(event)">
+
+  <input id="nTitle" required placeholder="عنوان خبر">
+
+  <input id="nDate" placeholder="تاریخ">
+
+  <textarea id="nText" required placeholder="متن خبر"></textarea>
+
+  <button class="btn">➕ انتشار خبر</button>
+
+ </form>
+
+ <hr>
+
+ ${get(K.news).map(n=>`
+  <div class="notice">
+
+   <b>${esc(n.title)}</b>
+   <p class="muted">${esc(n.text)}</p>
+
+   <button class="mini" onclick="deleteNews(${n.id})">
+    🗑️ حذف
+   </button>
+
+  </div>
+ `).join("")}
+
+ </div>
+ `;
+}
+
+function addNews(e){
+
+ e.preventDefault();
+
+ const ns=get(K.news);
+
+ ns.unshift({
+  id:Date.now(),
+  title:document.getElementById("nTitle").value,
+  date:document.getElementById("nDate").value||new Date().toLocaleDateString("fa-IR"),
+  text:document.getElementById("nText").value
+ });
+
+ set(K.news,ns);
+
+ toast("خبر منتشر شد 📰");
+ go("#/admin/news");
+}
+
+function deleteNews(id){
+
+ if(!confirm("خبر حذف شود؟"))return;
+
+ set(K.news,get(K.news).filter(x=>x.id!=id));
+
+ toast("حذف شد");
+ render();
+}
+
+/* =========================
+   ADMIN ORDERS
+   ========================= */
+
+function adminOrders(){
+
+ const os=get(K.orders);
+
+ return `
+ <div class="pagebox">
+
+ <h1>🛒 مدیریت سفارش‌ها</h1>
+
+ ${os.length?`
+ <table>
+
+ <thead>
+ <tr>
+  <th>کد</th>
+  <th>کاربر</th>
+  <th>مبلغ</th>
+  <th>وضعیت</th>
+  <th>عملیات</th>
+ </tr>
+ </thead>
+
+ <tbody>
+
+ ${os.map(o=>`
+ <tr>
+
+  <td>${o.id}</td>
+  <td>${esc(o.user)}</td>
+  <td>${money(o.amount)}</td>
+  <td>${statusText(o.status)}</td>
+
+  <td>
+
+   ${o.receipt?
+    `<button class="mini" onclick="showReceipt(${o.id})">📸 رسید</button>`
+    :"بدون رسید"}
+
+   ${o.status==="review"?
+    `<button class="mini" onclick="approveOrder(${o.id})">✅ تأیید</button>
+     <button class="mini danger" onclick="rejectOrder(${o.id})">❌ رد</button>`
+    :""}
+
+  </td>
+
+ </tr>
+ `).join("")}
+
+ </tbody>
+ </table>
+ `:"<div class='notice'>سفارشی وجود ندارد.</div>"}
+
+ </div>
+ `;
+}
+
+function showReceipt(id){
+
+ const o=get(K.orders).find(x=>x.id==id);
+
+ if(!o?.receipt){
+  toast("رسیدی وجود ندارد.");
+  return;
+ }
+
+ const w=window.open();
+
+ if(!w){
+  toast("مرورگر اجازه پنجره جدید نداد.");
+  return;
+ }
+
+ w.document.write(`
+ <title>رسید ${id}</title>
+ <body style="background:#111;color:white;text-align:center">
+ <h2>رسید سفارش ${id}</h2>
+ <img src="${o.receipt}" style="max-width:95%;max-height:85vh">
+ </body>
+ `);
+}
+
+function approveOrder(id){
+
+ const os=get(K.orders);
+ const o=os.find(x=>x.id==id);
+
+ if(!o)return;
+
+ o.status="paid";
+
+ set(K.orders,os);
+
+ toast("سفارش تأیید شد ✅");
+ render();
+}
+
+function rejectOrder(id){
+
+ const os=get(K.orders);
+ const o=os.find(x=>x.id==id);
+
+ if(!o)return;
+
+ o.status="rejected";
+
+ set(K.orders,os);
+
+ toast("سفارش رد شد ❌");
+ render();
+}
+
+/* =========================
+   DOWNLOAD
+   ========================= */
+
+function downloadProduct(id){
+
+ const o=get(K.orders).find(x=>x.id==id);
+
+ if(!o)return;
+
+ const g=get(K.games).find(x=>x.id==o.gameId);
+
+ if(!g?.file){
+  toast("فایل محصول در دسترس نیست.");
+  return;
+ }
+
+ const a=document.createElement("a");
+
+ a.href=g.file;
+ a.download=(g.title||"MBMODS")+"-file";
+
+ document.body.appendChild(a);
+ a.click();
+ a.remove();
+}
+
+/* =========================
+   ADMIN USERS
+   ========================= */
+
+function adminUsers(){
+
+ const us=get(K.users);
+
+ return `
+ <div class="pagebox">
+
+ <h1>👥 کاربران</h1>
+
+ <table>
+
+ <thead>
+ <tr>
+  <th>نام</th>
+  <th>موبایل</th>
+  <th>عملیات</th>
+ </tr>
+ </thead>
+
+ <tbody>
+
+ ${us.map(u=>`
+ <tr>
+  <td>${esc(u.name)}</td>
+  <td>${esc(u.phone)}</td>
+  <td>
+   <button class="mini danger"
+    onclick="deleteUser(${u.id})">
+    حذف
+   </button>
+  </td>
+ </tr>
+ `).join("")}
+
+ </tbody>
+ </table>
+
+ </div>
+ `;
+}
+
+function deleteUser(id){
+
+ if(!confirm("کاربر حذف شود؟"))return;
+
+ set(K.users,get(K.users).filter(x=>x.id!=id));
+
+ toast("کاربر حذف شد");
+ render();
+}
+
+/* =========================
+   PAYMENT SETTINGS
+   ========================= */
+
+function adminSettings(){
+
+ const s=get(K.settings);
+
+ return `
+ <div class="pagebox">
+
+ <h1>💳 تنظیمات پرداخت</h1>
+
+ <div class="notice">
+  اینجا اطلاعاتی را که خریدار هنگام ثبت سفارش می‌بیند وارد کن.
+  <br>
+  اطلاعات در LocalStorage همین مرورگر ذخیره می‌شود.
+ </div>
+
+ <form class="form" onsubmit="saveSettings(event)">
+
+  <label>💳 شماره کارت</label>
+  <input
+   id="payCard"
+   inputmode="numeric"
+   placeholder="مثلاً 6037-...."
+   value="${esc(s.card)}">
+
+  <label>👤 نام صاحب کارت</label>
+  <input
+   id="payOwner"
+   placeholder="نام صاحب کارت"
+   value="${esc(s.owner)}">
+
+  <label>🏦 شماره حساب</label>
+  <input
+   id="payAccount"
+   placeholder="اختیاری"
+   value="${esc(s.account)}">
+
+  <label>📱 شماره تماس</label>
+  <input
+   id="payPhone"
+   placeholder="اختیاری"
+   value="${esc(s.phone)}">
+
+  <label>📝 توضیح پرداخت</label>
+  <textarea id="payDesc"
+   placeholder="مثلاً بعد از واریز، رسید را از بخش سفارش‌ها ارسال کنید.">${esc(s.description)}</textarea>
+
+  <button class="btn red">
+   💾 ذخیره تنظیمات پرداخت
+  </button>
+
+ </form>
+
+ <br>
+
+ <button class="mini danger" onclick="resetAll()">
+  ⚠️ پاک کردن تمام اطلاعات سایت
+ </button>
+
+ </div>
+ `;
+}
+
+function saveSettings(e){
+
+ e.preventDefault();
+
+ const s={
+  card:document.getElementById("payCard").value.trim(),
+  owner:document.getElementById("payOwner").value.trim(),
+  account:document.getElementById("payAccount").value.trim(),
+  phone:document.getElementById("payPhone").value.trim(),
+  description:document.getElementById("payDesc").value.trim()
+ };
+
+ set(K.settings,s);
+
+ toast("تنظیمات پرداخت ذخیره شد 💳");
+ go("#/admin/settings");
+}
+
+function resetAll(){
+
+ if(!confirm("همه بازی‌ها، سفارش‌ها، کاربران و تنظیمات پاک شوند؟"))return;
+
+ Object.values(K).forEach(k=>localStorage.removeItem(k));
+
+ localStorage.removeItem("mbUser");
+ localStorage.removeItem("mbAdmin");
+
+ location.reload();
+}
+
+/* =========================
+   PROFILE
+   ========================= */
+
+function profile(){
+
+ if(!localStorage.mbUser){
+  return shell(
+   "👤 حساب",
+   `<button class="btn" onclick="go('#/login')">ورود</button>`
+  );
+ }
+
+ const u=JSON.parse(localStorage.mbUser);
+
+ return `
+ <div class="pagebox">
+
+  <h1>👤 پروفایل</h1>
+
+  <div class="notice">
+   نام کاربری: <b>${esc(u.name)}</b><br>
+   موبایل: <b>${esc(u.phone)}</b>
+  </div>
+
+  <button class="btn red" onclick="logoutUser()">
+   🚪 خروج
+  </button>
+
+ </div>
+ `;
+}
+
+function logoutUser(){
+
+ localStorage.removeItem("mbUser");
+
+ toast("از حساب خارج شدی.");
+
+ go("#/home");
+}
+
+/* =========================
+   ROUTER
+   ========================= */
+
+function shell(title,body){
+ return `
+ <div class="pagebox">
+  <h1>${title}</h1>
+  ${body}
+ </div>
+ `;
+}
+
+function render(){
+
+ const hash=location.hash||"#/home";
+ const p=hash.replace(/^#\//,"").split("/");
+
+ let html="";
+
+ if(p[0]==="home"||!p[0])html=home();
+
+ else if(p[0]==="games"&&p[1])html=gameDetail(p[1]);
+
+ else if(p[0]==="games")html=games();
+
+ else if(p[0]==="news"&&p[1])html=newsDetail(p[1]);
+
+ else if(p[0]==="news")html=news();
+
+ else if(p[0]==="search")html=searchPage();
+
+ else if(p[0]==="favorites")html=favorites();
+
+ else if(p[0]==="login")html=login();
+
+ else if(p[0]==="register")html=register();
+
+ else if(p[0]==="orders")html=orders();
+
+ else if(p[0]==="profile")html=profile();
+
+ else if(p[0]==="admin"&&!p[1])html=admin();
+
+ else if(p[0]==="admin"&&p[1]==="login")html=adminLogin();
+
+ else if(p[0]==="admin"&&p[1]==="games"){
+  if(!localStorage.mbAdmin){go("#/admin/login");return}
+  html=adminGames();
+ }
+
+ else if(p[0]==="admin"&&p[1]==="news"){
+  if(!localStorage.mbAdmin){go("#/admin/login");return}
+  html=adminNews();
+ }
+
+ else if(p[0]==="admin"&&p[1]==="orders"){
+  if(!localStorage.mbAdmin){go("#/admin/login");return}
+  html=adminOrders();
+ }
+
+ else if(p[0]==="admin"&&p[1]==="users"){
+  if(!localStorage.mbAdmin){go("#/admin/login");return}
+  html=adminUsers();
+ }
+
+ else if(p[0]==="admin"&&p[1]==="settings"){
+  if(!localStorage.mbAdmin){go("#/admin/login");return}
+  html=adminSettings();
+ }
+
+ else html=home();
+
+ document.getElementById("app").innerHTML=html;
+ window.scrollTo(0,0);
+}
+
+window.addEventListener("hashchange",render);
+render();
+</script>
+
+</body>
+  </html>
