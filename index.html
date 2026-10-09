@@ -801,6 +801,13 @@ render();
   }
 
   async function mbLoadPublishedNews() {
+      
+<script>
+(async function () {
+  const games = await mbLoadPublishedGames();
+  console.log('MB MODS - بازی‌های دریافت‌شده:', games);
+})();
+</script>
     const { data, error } = await mbSupabase
       .from('news')
       .select('*')
