@@ -774,5 +774,46 @@ function render(){
 window.addEventListener("hashchange",render);
 render();
 </script>
+    
+<!-- MB MODS - Supabase connection -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = 'https://czevezkfksyymooauuzm.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_nJsPgF8_Rn653T0r2_ndOQ_h8vRv3hi';
+
+  const mbSupabase = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+  async function mbLoadPublishedGames() {
+    const { data, error } = await mbSupabase
+      .from('games')
+      .select('*')
+      .eq('published', true);
+
+    if (error) {
+      console.error('خطای دریافت بازی‌ها:', error.message);
+      return [];
+    }
+
+    return data || [];
+  }
+
+  async function mbLoadPublishedNews() {
+    const { data, error } = await mbSupabase
+      .from('news')
+      .select('*')
+      .eq('published', true);
+
+    if (error) {
+      console.error('خطای دریافت اخبار:', error.message);
+      return [];
+    }
+
+    return data || [];
+  }
+</script>
+</body>
 </body>
 </html>
