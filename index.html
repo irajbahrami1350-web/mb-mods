@@ -801,11 +801,34 @@ render();
   }
 
   async function mbLoadPublishedNews() {
-      
-<script>
+      <script>
 (async function () {
-  const games = await mbLoadPublishedGames();
-  console.log('MB MODS - بازی‌های دریافت‌شده:', games);
+  const status = document.createElement('div');
+
+  status.style.cssText =
+    'position:fixed;bottom:12px;left:12px;right:12px;' +
+    'z-index:999999;background:#151525;color:white;' +
+    'padding:14px;border:1px solid #7c4dff;border-radius:12px;' +
+    'direction:rtl;text-align:center;font-size:14px;';
+
+  status.textContent = 'در حال بررسی اتصال به دیتابیس...';
+  document.body.appendChild(status);
+
+  try {
+    const games = await mbLoadPublishedGames();
+
+    if (games.length > 0) {
+      status.textContent =
+        '✅ اتصال موفق! تعداد بازی‌های منتشرشده: ' + games.length +
+        ' | اولین بازی: ' + games[0].title;
+    } else {
+      status.textContent =
+        '⚠️ اتصال انجام شد، اما بازی منتشرشده‌ای دریافت نشد.';
+    }
+  } catch (error) {
+    status.textContent = '❌ خطا در اجرای آزمایش اتصال.';
+    console.error(error);
+  }
 })();
 </script>
     const { data, error } = await mbSupabase
@@ -821,6 +844,5 @@ render();
     return data || [];
   }
 </script>
-</body>
 </body>
 </html>
