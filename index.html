@@ -844,5 +844,68 @@ render();
     return data || [];
   }
 </script>
+    <!-- نمایش بازی‌ها و اخبار Supabase در سایت MB MODS -->
+<script>
+(async function () {
+  try {
+    const [dbGames, dbNews] = await Promise.all([
+      mbLoadPublishedGames(),
+      mbLoadPublishedNews()
+    ]);
+
+    // تبدیل بازی‌های دیتابیس به قالب کارت‌های سایت
+    const cloudGames = (dbGames || []).map(g => ({
+      id: 'db-game-' + g.id,
+      _fromSupabase: true,
+      title: g.title || 'بازی جدید',
+      icon: '🎮',
+      genre: 'بازی',
+      platform: 'Android',
+      version: 'آخرین نسخه',
+      size: '—',
+      price: Number(g.price || 0),
+      old: 0,
+      cover: g.image_url || '',
+      desc: g.description || '',
+      guide: 'راهنمای نصب به‌زودی اضافه می‌شود.',
+      file: g.game_url || '',
+      downloads: 0,
+      views: 0,
+      sales: 0,
+      vipOnly: Boolean(g.is_vip)
+    }));
+
+    // تبدیل اخبار دیتابیس به قالب اخبار سایت
+    const cloudNews = (dbNews || []).map(n => ({
+      id: 'db-news-' + n.id,
+      _fromSupabase: true,
+      title: n.title || 'خبر جدید',
+      text: n.description || '',
+      date: n.created_at
+        ? new Date(n.created_at).toLocaleDateString('fa-IR')
+        : '',
+      image_url: n.image_url || '',
+      article_url: n.article_url || ''
+    }));
+
+    // نگه‌داشتن محتوای فعلی و جایگزینی نسخه‌های قبلی ابری
+    const localGames = get(K.games).filter(g => !g._fromSupabase);
+    const localNews = get(K.news).filter(n => !n._fromSupabase);
+
+    set(K.games, [...cloudGames, ...localGames]);
+    set(K.news, [...cloudNews, ...localNews]);
+
+    // به‌روزرسانی صفحه با اطلاعات دریافتی
+    render();
+
+    console.log('MB MODS: دیتابیس بارگذاری شد', {
+      games: cloudGames.length,
+      news: cloudNews.length
+    });
+  } catch (err) {
+    console.error('خطا در نمایش اطلاعات Supabase:', err);
+  }
+})();
+</script>
 </body>
 </html>
