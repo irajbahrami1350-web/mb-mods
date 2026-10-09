@@ -4,8 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MB MODS 🎮🛠️ ULTRA</title>
+<style>
+*{box-sizing:border-box}
+:root{--p:#00eaff;--r:#ff1744;--g:#35ff7a;--bg:#05060a;--card:#0c1119;--line:#1d2b3c}
+body{margin:0;background:radial-gradient(circle at 20% 0,#09243355,transparent 35%),var(--bg);color:#eee;font-family:Tahoma,Arial,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:20;background:#060910ee;backdrop-filter:blur(15px);border-bottom:1px solid #203044}
+.nav{max-width:1250px;margin:auto;padding:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.logo{font-size:22px;font-weight:1000;color:var(--p);text-shadow:0 0 20px #00eaff88}
+.navlinks{display:flex;gap:6px;flex-wrap:wrap;margin-right:auto}
+.navlinks button,.mini{background:#0d1622;color:#ddd;border:1px solid #23364c;border-radius:11px;padding:9px 11px}
+.navlinks button:hover,.mini:hover{border-color:var(--p);color:#fff}
+main{max-width:1250px;margin:auto;padding:25px 14px 80px}
+.hero{border:1px solid #244158;border-radius:28px;padding:38px 22px;background:radial-gradient(circle at 85% 15%,#ff174433,transparent 30%),radial-gradient(circle at 15% 90%,#00eaff25,transparent 35%),#090e16;box-shadow:0 0 60px #00eaff0c}
+.hero h1{font-size:clamp(35px,8vw,70px);margin:0}
+.hero h1 span{color:var(--r);text-shadow:0 0 25px #ff1744aa}
+.hero p{line-height:2;color:#aebaca}
+.actions{display:flex;gap:9px;flex-wrap:wrap}
+.btn{border:0;border-radius:13px;padding:11px 16px;background:linear-gradient(135deg,var(--p),#6578ff);font-weight:900;color:#001018}
+.btn.red{background:linear-gradient(135deg,#ff1744,#ff633d);color:#fff}
+.btn.dark{background:#101a28;color:#fff;border:1px solid #2a3b51}
+.section{margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:15px}
+.card,.pagebox{background:linear-gradient(180deg,#0d141e,#080c12);border:1px solid var(--line);border-radius:19px;padding:15px;box-shadow:0 12px 35px #0005}
+.card:hover{transform:translateY(-3px);border-color:#31516e}
+.cover{height:135px;border-radius:15px;background:linear-gradient(135deg,#142538,#080b11);display:flex;align-items:center;justify-content:center;font-size:62px;overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover}
+.tag{display:inline-block;background:#101d2b;border:1px solid #214357;color:var(--p);padding:4px 8px;border-radius:20px;font-size:11px;margin-top:9px}
+.price{font-size:20px;font-weight:900;color:var(--g);margin:10px 0}
+.old{text-decoration:line-through;color:#6e7887;font-size:12px}
+.muted{color:#8997a8;line-height:1.9;font-size:13px}
+.search{width:100%;padding:13px;background:#070b11;color:#fff;border:1px solid #263a51;border-radius:14px;margin:10px 0 16px;outline:none}
+.form{display:grid;gap:10px;max-width:850px}
+.form input,.form textarea,.form select{width:100%;background:#070b11;color:#fff;border:1px solid #263a51;border-radius:12px;padding:12px;outline:none}
+.form textarea{min-height:110px;resize:vertical}
+.form input:focus,.form textarea:focus,.form select:focus{border-color:var(--p)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.notice{background:#101925;border:1px solid #26394f;border-radius:13px;padding:12px;margin:10px 0;line-height:1.9}
+.adminnav{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}
+table{width:100%;border-collapse:collapse}
+th,td{border-bottom:1px solid #1a2838;padding:10px;text-align:right;font-size:13px}
+th{color:var(--p)}
+.ok{color:var(--g)}.danger{color:#ff5872}
+.modal{position:fixed;inset:0;background:#000c;display:flex;align-items:center;justify-content:center;padding:15px;z-index:99}
+.modal>div{width:100%;max-width:650px;max-height:90vh;overflow:auto;background:#0b111a;border:1px solid #2b4762;border-radius:20px;padding:20px}
+.hidden{display:none!important}
+.toast{position:fixed;bottom:18px;left:18px;z-index:999;background:#101a26;border:1px solid #29435c;border-radius:12px;padding:12px 16px;box-shadow:0 10px 30px #0008}
+footer{text-align:center;color:#647184;padding:30px}
+@media(max-width:650px){
+.nav{align-items:flex-start}.navlinks{width:100%;order:3}
+.navlinks button{flex:1;font-size:11px}.two{grid-template-columns:1fr}
+.grid{grid-template-columns:repeat(2,1fr)}.card{padding:10px}.cover{height:105px}
+}
+</style>
 
-<!-- Yektanet Native Ads -->
+<!-- اسکریپت تبلیغات یکتانت -->
 <script>
 !function(e,t,n){
     e.yektanetAnalyticsObject=n,
@@ -13,7 +66,7 @@
     e[n].q=e[n].q||[];
     var a=t.getElementsByTagName("head")[0],
         r=new Date,
-        c="https://cdn.yektanet.com/superscript-v2/JDkIVBY/native-48742/yn_pub.js?v="
+        c="https://cdn.yektanet.com/superscript-v2/JDkIVBYe/native-48742/yn_pub.js?v="
             +r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),
         s=t.createElement("link");
     s.rel="preload",
@@ -26,326 +79,12 @@
     a.appendChild(l);
 }(window,document,"yektanet");
 </script>
-
-<style>
-*{box-sizing:border-box}
-:root{
- --p:#00eaff;
- --r:#ff1744;
- --g:#35ff7a;
- --y:#ffd740;
- --bg:#05060a;
- --card:#0c1119;
- --line:#1d2b3c
-}
-body{
- margin:0;
- background:
- radial-gradient(circle at 20% 0,#09243355,transparent 35%),
- var(--bg);
- color:#eee;
- font-family:Tahoma,Arial,sans-serif
-}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
-header{
- position:sticky;
- top:0;
- z-index:20;
- background:#060910ee;
- backdrop-filter:blur(15px);
- border-bottom:1px solid #203044
-}
-.nav{
- max-width:1250px;
- margin:auto;
- padding:12px;
- display:flex;
- gap:10px;
- align-items:center;
- flex-wrap:wrap
-}
-.logo{
- font-size:22px;
- font-weight:1000;
- color:var(--p);
- text-shadow:0 0 20px #00eaff88
-}
-.navlinks{
- display:flex;
- gap:6px;
- flex-wrap:wrap;
- margin-right:auto
-}
-.navlinks button,.mini{
- background:#0d1622;
- color:#ddd;
- border:1px solid #23364c;
- border-radius:11px;
- padding:9px 11px
-}
-.navlinks button:hover,.mini:hover{
- border-color:var(--p);
- color:#fff
-}
-main{
- max-width:1250px;
- margin:auto;
- padding:25px 14px 80px
-}
-.hero{
- border:1px solid #244158;
- border-radius:28px;
- padding:38px 22px;
- background:
- radial-gradient(circle at 85% 15%,#ff174433,transparent 30%),
- radial-gradient(circle at 15% 90%,#00eaff25,transparent 35%),
- #090e16;
- box-shadow:0 0 60px #00eaff0c
-}
-.hero h1{
- font-size:clamp(35px,8vw,70px);
- margin:0
-}
-.hero h1 span{
- color:var(--r);
- text-shadow:0 0 25px #ff1744aa
-}
-.hero p{
- line-height:2;
- color:#aebaca
-}
-.actions{
- display:flex;
- gap:9px;
- flex-wrap:wrap
-}
-.btn{
- border:0;
- border-radius:13px;
- padding:11px 16px;
- background:linear-gradient(135deg,var(--p),#6578ff);
- font-weight:900;
- color:#001018
-}
-.btn.red{
- background:linear-gradient(135deg,#ff1744,#ff633d);
- color:#fff
-}
-.btn.dark{
- background:#101a28;
- color:#fff;
- border:1px solid #2a3b51
-}
-.section{margin-top:25px}
-.grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
- gap:15px
-}
-.card,.pagebox{
- background:linear-gradient(180deg,#0d141e,#080c12);
- border:1px solid var(--line);
- border-radius:19px;
- padding:15px;
- box-shadow:0 12px 35px #0005
-}
-.card:hover{
- transform:translateY(-3px);
- border-color:#31516e
-}
-.cover{
- height:135px;
- border-radius:15px;
- background:linear-gradient(135deg,#142538,#080b11);
- display:flex;
- align-items:center;
- justify-content:center;
- font-size:62px;
- overflow:hidden
-}
-.cover img{
- width:100%;
- height:100%;
- object-fit:cover
-}
-.tag{
- display:inline-block;
- background:#101d2b;
- border:1px solid #214357;
- color:var(--p);
- padding:4px 8px;
- border-radius:20px;
- font-size:11px;
- margin-top:9px
-}
-.price{
- font-size:20px;
- font-weight:900;
- color:var(--g);
- margin:10px 0
-}
-.old{
- text-decoration:line-through;
- color:#6e7887;
- font-size:12px
-}
-.muted{
- color:#8997a8;
- line-height:1.9;
- font-size:13px
-}
-.search{
- width:100%;
- padding:13px;
- background:#070b11;
- color:#fff;
- border:1px solid #263a51;
- border-radius:14px;
- margin:10px 0 16px;
- outline:none
-}
-.form{
- display:grid;
- gap:10px;
- max-width:850px
-}
-.form input,.form textarea,.form select{
- width:100%;
- background:#070b11;
- color:#fff;
- border:1px solid #263a51;
- border-radius:12px;
- padding:12px;
- outline:none
-}
-.form textarea{
- min-height:110px;
- resize:vertical
-}
-.two{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:10px
-}
-.notice{
- background:#101925;
- border:1px solid #26394f;
- border-radius:13px;
- padding:12px;
- margin:10px 0;
- line-height:1.9
-}
-.adminnav{
- display:flex;
- gap:7px;
- flex-wrap:wrap;
- margin-bottom:15px
-}
-table{
- width:100%;
- border-collapse:collapse
-}
-th,td{
- border-bottom:1px solid #1a2838;
- padding:10px;
- text-align:right;
- font-size:13px
-}
-th{color:var(--p)}
-.ok{color:var(--g)}
-.danger{color:#ff5872}
-.modal{
- position:fixed;
- inset:0;
- background:#000c;
- display:flex;
- align-items:center;
- justify-content:center;
- padding:15px;
- z-index:99
-}
-.modal>div{
- width:100%;
- max-width:650px;
- max-height:90vh;
- overflow:auto;
- background:#0b111a;
- border:1px solid #2b4762;
- border-radius:20px;
- padding:20px
-}
-.hidden{display:none!important}
-.toast{
- position:fixed;
- bottom:18px;
- left:18px;
- z-index:999;
- background:#101a26;
- border:1px solid #29435c;
- border-radius:12px;
- padding:12px 16px;
- box-shadow:0 10px 30px #0008
-}
-footer{
- text-align:center;
- color:#647184;
- padding:30px
-}
-.stat{
- font-size:28px;
- color:var(--p);
- font-weight:1000
-}
-.discount{
- border:1px dashed #35ff7a66;
- background:#07170f;
- padding:12px;
- border-radius:14px;
- margin:10px 0
-}
-.vipbox{
- border:1px solid #5e4c13;
- background:
- radial-gradient(circle at 80% 0,#ffd74018,transparent 35%),
- #12100a
-}
-.vipprice{
- color:var(--y);
- font-size:23px;
- font-weight:1000
-}
-.small{
- font-size:11px;
- color:#718094
-}
-
-/* Yektanet */
-.yt-ad{
- max-width:1250px;
- margin:0 auto 20px;
- padding:0 14px
-}
-
-@media(max-width:650px){
- .nav{align-items:flex-start}
- .navlinks{width:100%;order:3}
- .navlinks button{flex:1;font-size:11px}
- .two{grid-template-columns:1fr}
- .grid{grid-template-columns:repeat(2,1fr)}
- .card{padding:10px}
- .cover{height:105px}
- table{display:block;overflow-x:auto}
-}
-</style>
 </head>
 
 <body>
-
 <header>
 <div class="nav">
 <div class="logo">MB MODS 🎮🛠️</div>
-
 <div class="navlinks">
 <button onclick="go('#/home')">🏠 خانه</button>
 <button onclick="go('#/games')">🎮 بازی‌ها</button>
@@ -353,7 +92,6 @@ footer{
 <button onclick="go('#/search')">🔎 جستجو</button>
 <button onclick="go('#/favorites')">❤️ علاقه‌مندی</button>
 <button onclick="go('#/orders')">🛒 سفارش‌ها</button>
-<button onclick="go('#/vip')">👑 VIP</button>
 <button onclick="go(localStorage.mbAdmin?'#/admin':'#/admin/login')">⚙️ مدیریت</button>
 </div>
 </div>
@@ -361,142 +99,77 @@ footer{
 
 <main id="app"></main>
 
-<!-- Yektanet Native Advertisement -->
-<div class="yt-ad">
- <div id="pos-article-display-123337"></div>
+<!-- جایگاه تبلیغات همسان یکتانت -->
+<div class="section" style="max-width:1250px;margin:20px auto;padding:0 14px">
+<div id="pos-article-display-123377"></div>
 </div>
 
 <footer>MB MODS ULTRA 🎮 • نسخه تک‌فایلی</footer>
-
 <div id="toast" class="toast hidden"></div>
 
 <script>
-
-/* =====================================================
-   MB MODS ULTRA V8
-   ===================================================== */
-
 const K={
  games:"mb_games",
  news:"mb_news",
  users:"mb_users",
  orders:"mb_orders",
  settings:"mb_settings",
- fav:"mb_fav",
- coupons:"mb_coupons",
- vip:"mb_vip"
+ fav:"mb_fav"
 };
 
 const seedGames=[
 {
- id:1,
- title:"رانندگان اروپا ۳",
- icon:"🚛",
- genre:"شبیه‌سازی",
- platform:"Android",
- version:"3.2",
- price:50000,
- old:70000,
- size:"180 MB",
- cover:"",
- desc:"صفحه محصول نمونه MB MODS.",
- guide:"پس از دریافت فایل، طبق راهنمای نصب محصول عمل کنید.",
- file:"",
- views:0,
- downloads:0,
- sales:0
+ id:1,title:"رانندگان اروپا ۳",icon:"🚛",genre:"شبیه‌سازی",
+ platform:"Android",version:"3.2",price:50000,old:70000,
+ size:"180 MB",cover:"",
+ desc:"صفحه محصول نمونه MB MODS. فقط فایل‌هایی را منتشر کنید که مجوز قانونی توزیع آن‌ها را دارید.",
+ guide:"پس از دریافت فایل، طبق راهنمای نصب محصول عمل کنید.",file:""
 },
 {
- id:2,
- title:"Minecraft",
- icon:"⛏️",
- genre:"Sandbox",
- platform:"Android / PC",
- version:"Demo",
- price:0,
- old:0,
- size:"—",
- cover:"",
- desc:"صفحه معرفی Minecraft.",
- guide:"برای نسخه قانونی از منبع رسمی بازی استفاده کنید.",
- file:"",
- views:0,
- downloads:0,
- sales:0
+ id:2,title:"Minecraft",icon:"⛏️",genre:"Sandbox",
+ platform:"Android / PC",version:"Demo",price:0,old:0,
+ size:"—",cover:"",desc:"صفحه معرفی Minecraft.",
+ guide:"برای نسخه قانونی از منبع رسمی بازی استفاده کنید.",file:""
 },
 {
- id:3,
- title:"Among Us",
- icon:"👨‍🚀",
- genre:"Party",
- platform:"Android",
- version:"Latest",
- price:30000,
- old:45000,
- size:"—",
- cover:"",
- desc:"محصول نمونه.",
- guide:"راهنمای نصب محصول را قبل از انتشار تکمیل کنید.",
- file:"",
- views:0,
- downloads:0,
- sales:0
+ id:3,title:"Among Us",icon:"👨‍🚀",genre:"Party",
+ platform:"Android",version:"Latest",price:30000,old:45000,
+ size:"—",cover:"",desc:"محصول نمونه.",
+ guide:"راهنمای نصب محصول را قبل از انتشار تکمیل کنید.",file:""
 }
 ];
 
 const seedNews=[
-{
- id:1,
- title:"🚨 شروع رسمی MB MODS",
- text:"به MB MODS خوش آمدید؛ اخبار بازی و محصولات جدید اینجا منتشر می‌شوند.",
- date:"1405/07/12"
-},
-{
- id:2,
- title:"🎮 بخش بازی‌ها فعال شد",
- text:"هر بازی می‌تواند صفحه اختصاصی، قیمت، مشخصات و راهنمای نصب داشته باشد.",
- date:"1405/07/13"
-}
+{id:1,title:"🚨 شروع رسمی MB MODS",text:"به MB MODS خوش آمدید؛ اخبار بازی و محصولات جدید اینجا منتشر می‌شوند.",date:"1405/07/12"},
+{id:2,title:"🎮 بخش بازی‌ها فعال شد",text:"هر بازی می‌تواند صفحه اختصاصی، قیمت، مشخصات و راهنمای نصب داشته باشد.",date:"1405/07/13"}
 ];
 
 function get(k,d=[]){
- try{
-  const x=JSON.parse(localStorage.getItem(k));
-  return x??d;
- }catch(e){
-  return d;
- }
+ try{return JSON.parse(localStorage.getItem(k)) ?? d}
+ catch(e){return d}
 }
 
 function set(k,v){
  try{
   localStorage.setItem(k,JSON.stringify(v));
-  return true;
+  return true
  }catch(e){
   toast("حافظه مرورگر پر شده است ❌");
-  return false;
+  return false
  }
 }
 
 function esc(s=""){
  return String(s).replace(/[&<>"']/g,m=>({
-  "&":"&amp;",
-  "<":"&lt;",
-  ">":"&gt;",
-  '"':"&quot;",
-  "'":"&#039;"
+ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
  }[m]));
 }
 
 function money(n){
- return Number(n)
- ? Number(n).toLocaleString("fa-IR")+" تومان"
- : "رایگان";
+ return Number(n)?Number(n).toLocaleString("fa-IR")+" تومان":"رایگان";
 }
 
-function go(h){
- location.hash=h;
-}
+function go(h){location.hash=h}
 
 function toast(x){
  const t=document.getElementById("toast");
@@ -505,3193 +178,601 @@ function toast(x){
  setTimeout(()=>t.classList.add("hidden"),2500);
 }
 
-function currentUser(){
- try{
-  return JSON.parse(localStorage.mbUser||"null");
- }catch(e){
-  return null;
- }
-}
-
-function isVip(){
- const u=currentUser();
- return !!(u&&u.vipUntil&&Number(u.vipUntil)>Date.now());
-}
-
-function vipRemaining(){
- const u=currentUser();
- if(!u?.vipUntil)return 0;
- return Math.max(0,Number(u.vipUntil)-Date.now());
-}
-
-function ensureData(){
-
- if(!localStorage[K.games]){
-  set(K.games,seedGames);
- }
-
- if(!localStorage[K.news]){
-  set(K.news,seedNews);
- }
-
- if(!localStorage[K.users]){
-  set(K.users,[]);
- }
-
- if(!localStorage[K.orders]){
-  set(K.orders,[]);
- }
-
- if(!localStorage[K.fav]){
-  set(K.fav,[]);
- }
-
- if(!localStorage[K.coupons]){
-  set(K.coupons,[]);
- }
-
- if(!localStorage[K.vip]){
-  set(K.vip,[
-   {
-    id:1,
-    title:"VIP یک ماهه",
-    days:30,
-    price:99000,
-    downloads:30,
-    description:"اشتراک VIP یک ماهه"
-   },
-   {
-    id:2,
-    title:"VIP سه ماهه",
-    days:90,
-    price:199000,
-    downloads:100,
-    description:"اشتراک VIP سه ماهه"
-   }
-  ]);
- }
-
- if(!localStorage[K.settings]){
-  set(K.settings,{
-   card:"",
-   owner:"",
-   account:"",
-   phone:"",
-   description:""
-  });
- }
-
-}
-
-ensureData();
+if(!localStorage[K.games])set(K.games,seedGames);
+if(!localStorage[K.news])set(K.news,seedNews);
+if(!localStorage[K.users])set(K.users,[]);
+if(!localStorage[K.orders])set(K.orders,[]);
+if(!localStorage[K.fav])set(K.fav,[]);
+if(!localStorage[K.settings])set(K.settings,{
+ card:"",owner:"",account:"",phone:"",description:""
+});
 
 function home(){
-
  const games=get(K.games);
  const news=get(K.news);
-
  return `
  <section class="hero">
-
-  <h1>MB <span>MODS</span> 🎮</h1>
-
-  <p>
-  پورتال گیمینگ خفن برای معرفی بازی، مود، اخبار و محصولات دیجیتال.
-  طراحی شده برای موبایل و قابل مدیریت از داخل پنل مدیریت.
-  </p>
-
-  <div class="actions">
-   <button class="btn red" onclick="go('#/games')">
-    🔥 ورود به بازی‌ها
-   </button>
-
-   <button class="btn dark" onclick="go('#/news')">
-    📰 آخرین اخبار
-   </button>
-
-   <button class="btn" onclick="go('#/vip')">
-    👑 عضویت VIP
-   </button>
-  </div>
-
+   <h1>MB <span>MODS</span> 🎮</h1>
+   <p>پورتال گیمینگ خفن برای معرفی بازی، مود، اخبار و محصولات دیجیتال.
+   طراحی شده برای موبایل و قابل مدیریت از داخل پنل مدیریت.</p>
+   <div class="actions">
+    <button class="btn red" onclick="go('#/games')">🔥 ورود به بازی‌ها</button>
+    <button class="btn dark" onclick="go('#/news')">📰 آخرین اخبار</button>
+   </div>
  </section>
-
  <div class="section">
-
   <h2>🔥 بازی‌های ویژه</h2>
-
-  <div class="grid">
-   ${games.slice(0,6).map(gameCard).join("")}
-  </div>
-
+  <div class="grid">${games.slice(0,6).map(gameCard).join("")}</div>
  </div>
-
  <div class="section">
-
   <h2>⚡ آخرین اخبار</h2>
-
   <div class="grid">
-
    ${news.slice(0,4).map(n=>`
-
     <article class="card">
-
-     <span class="tag">${esc(n.date)}</span>
-
-     <h3>${esc(n.title)}</h3>
-
-     <p class="muted">${esc(n.text)}</p>
-
-     <button class="mini"
-      onclick="go('#/news/${n.id}')">
-      ادامه ←
-     </button>
-
+      <span class="tag">${esc(n.date)}</span>
+      <h3>${esc(n.title)}</h3>
+      <p class="muted">${esc(n.text)}</p>
+      <button class="mini" onclick="go('#/news/${n.id}')">ادامه ←</button>
     </article>
-
    `).join("")}
-
   </div>
-
- </div>
- `;
+ </div>`;
 }
 
 function gameCard(g){
-
  return `
  <article class="card">
-
   <div class="cover">
-   ${
-    g.cover
-    ?`<img src="${g.cover}" alt="">`
-    :esc(g.icon||"🎮")
-   }
+   ${g.cover?`<img src="${g.cover}" alt="">`:esc(g.icon||"🎮")}
   </div>
-
-  <span class="tag">
-   ${esc(g.genre||"گیم")} • ${esc(g.platform||"Android")}
-  </span>
-
+  <span class="tag">${esc(g.genre)} • ${esc(g.platform)}</span>
   <h3>${esc(g.title)}</h3>
-
-  <p class="muted">
-   ${esc(g.size||"—")} • نسخه ${esc(g.version||"—")}
-  </p>
-
-  <div class="price">
-
-   ${money(g.price)}
-
-   ${
-    g.old
-    ?`<span class="old">${money(g.old)}</span>`
-    :""
-   }
-
-  </div>
-
-  <p class="small">
-   👁️ ${Number(g.views||0).toLocaleString("fa-IR")}
-   • 📥 ${Number(g.downloads||0).toLocaleString("fa-IR")}
-  </p>
-
-  <button class="btn"
-   onclick="go('#/games/${g.id}')">
-   مشاهده بازی
-  </button>
-
- </article>
- `;
+  <p class="muted">${esc(g.size||"—")} • نسخه ${esc(g.version||"—")}</p>
+  <div class="price">${money(g.price)} ${g.old?`<span class="old">${money(g.old)}</span>`:""}</div>
+  <button class="btn" onclick="go('#/games/${g.id}')">مشاهده بازی</button>
+ </article>`;
 }
 
 function games(){
-
  return `
  <h1>🎮 بازی‌ها</h1>
-
- <input class="search"
-  placeholder="نام بازی، ژانر یا پلتفرم..."
-  oninput="filterGames(this.value)">
-
- <div id="gameGrid" class="grid">
-  ${get(K.games).map(gameCard).join("")}
- </div>
- `;
+ <input class="search" placeholder="نام بازی، ژانر یا پلتفرم..." oninput="filterGames(this.value)">
+ <div id="gameGrid" class="grid">${get(K.games).map(gameCard).join("")}</div>`;
 }
 
 function filterGames(q){
-
  const x=q.toLowerCase();
-
- const g=get(K.games).filter(a=>
-  (a.title+" "+a.genre+" "+a.platform)
-  .toLowerCase()
-  .includes(x)
- );
-
- document.getElementById("gameGrid").innerHTML=
-  g.map(gameCard).join("")||
-  `<div class="notice">چیزی پیدا نشد 😐</div>`;
+ const g=get(K.games).filter(a=>(a.title+" "+a.genre+" "+a.platform).toLowerCase().includes(x));
+ document.getElementById("gameGrid").innerHTML=g.map(gameCard).join("")||
+ `<div class="notice">چیزی پیدا نشد 😐</div>`;
 }
 
 function gameDetail(id){
-
- const gs=get(K.games);
- const g=gs.find(x=>x.id==id);
-
+ const g=get(K.games).find(x=>x.id==id);
  if(!g)return shell("خطا","بازی پیدا نشد.");
-
- const key="mb_view_"+id;
- const last=Number(sessionStorage.getItem(key)||0);
-
- if(Date.now()-last>10000){
-
-  g.views=Number(g.views||0)+1;
-
-  set(K.games,gs);
-
-  sessionStorage.setItem(key,String(Date.now()));
- }
-
  const fav=get(K.fav);
-
  return `
  <div class="pagebox">
-
-  <div class="cover" style="height:230px">
-
-   ${
-    g.cover
-    ?`<img src="${g.cover}">`
-    :esc(g.icon||"🎮")
-   }
-
-  </div>
-
+  <div class="cover" style="height:230px">${g.cover?`<img src="${g.cover}">`:esc(g.icon||"🎮")}</div>
   <h1>${esc(g.title)}</h1>
-
-  <p class="muted">
-   ${esc(g.desc)}
-  </p>
-
+  <p class="muted">${esc(g.desc)}</p>
   <div class="two">
-
-   <div>
-    <b>ژانر:</b> ${esc(g.genre)}<br>
-    <b>پلتفرم:</b> ${esc(g.platform)}<br>
-    <b>نسخه:</b> ${esc(g.version)}
-   </div>
-
-   <div>
-    <b>حجم:</b> ${esc(g.size)}<br>
-    <b>بازدید:</b> ${Number(g.views||0).toLocaleString("fa-IR")}<br>
-    <b>دانلود:</b> ${Number(g.downloads||0).toLocaleString("fa-IR")}
-   </div>
-
+   <div><b>ژانر:</b> ${esc(g.genre)}<br><b>پلتفرم:</b> ${esc(g.platform)}</div>
+   <div><b>نسخه:</b> ${esc(g.version)}<br><b>حجم:</b> ${esc(g.size)}</div>
   </div>
-
-  <div class="price">
-
-   ${money(g.price)}
-
-   ${
-    g.old
-    ?`<span class="old">${money(g.old)}</span>`
-    :""
-   }
-
-  </div>
-
-  <div class="notice">
-
-   <b>📘 راهنمای نصب:</b><br>
-
-   ${esc(g.guide)}
-
-  </div>
-
-  ${
-   g.price
-   ?`
-
-   <div class="discount">
-
-    <b>🎟️ کد تخفیف</b>
-
-    <p class="muted">
-     اگر کد تخفیف داری اینجا وارد کن.
-    </p>
-
-    <div class="actions">
-
-     <input
-      id="coupon-${g.id}"
-      class="search"
-      style="margin:0"
-      placeholder="مثلاً MB20">
-
-     <button
-      class="btn"
-      onclick="applyCoupon(${g.id})">
-      اعمال کد
-     </button>
-
-    </div>
-
-    <div id="coupon-result-${g.id}"></div>
-
-   </div>
-
-   `
-   :""
-  }
-
+  <div class="price">${money(g.price)} ${g.old?`<span class="old">${money(g.old)}</span>`:""}</div>
+  <div class="notice"><b>📘 راهنمای نصب:</b><br>${esc(g.guide)}</div>
   <div class="actions">
-
-   ${
-    g.price
-    ?
-    `<button class="btn red"
-      onclick="buy(${g.id})">
-      🛒 خرید و ثبت سفارش
-     </button>`
-    :
-    `<button class="btn"
-      onclick="freeDownload(${g.id})">
-      📥 دریافت رایگان
-     </button>`
-   }
-
-   <button class="btn dark"
-    onclick="toggleFav(${g.id})">
-
-    ${
-     fav.includes(g.id)
-     ?"💔 حذف از علاقه‌مندی"
-     :"❤️ علاقه‌مندی"
-    }
-
-   </button>
-
+   ${g.price?`<button class="btn red" onclick="buy(${g.id})">🛒 خرید و ثبت سفارش</button>`:
+   `<button class="btn" onclick="toast('این محصول رایگان است؛ لینک رسمی را استفاده کنید.')">📥 دریافت</button>`}
+   <button class="btn dark" onclick="toggleFav(${g.id})">${fav.includes(g.id)?"💔 حذف از علاقه‌مندی":"❤️ علاقه‌مندی"}</button>
   </div>
-
- </div>
- `;
-}
-
-function findCoupon(code){
-
- return get(K.coupons).find(c=>
-  String(c.code).toUpperCase()===
-  String(code).trim().toUpperCase() &&
-  c.active!==false
- );
-}
-
-function couponForGame(id){
-
- try{
-
-  const x=sessionStorage.getItem("mb_coupon_"+id);
-
-  if(!x)return null;
-
-  const c=JSON.parse(x);
-
-  const real=findCoupon(c.code);
-
-  if(!real)return null;
-
-  if(real.expires && Date.now()>Number(real.expires)){
-   return null;
-  }
-
-  return real;
-
- }catch(e){
-  return null;
- }
-}
-
-function applyCoupon(id){
-
- const input=document.getElementById("coupon-"+id);
-
- if(!input)return;
-
- const code=input.value.trim();
-
- if(!code){
-  toast("کد تخفیف را وارد کن.");
-  return;
- }
-
- const c=findCoupon(code);
-
- if(!c){
-  toast("کد تخفیف معتبر نیست ❌");
-  return;
- }
-
- if(c.expires && Date.now()>Number(c.expires)){
-  toast("این کد تخفیف منقضی شده است ❌");
-  return;
- }
-
- const g=get(K.games).find(x=>x.id==id);
-
- if(!g)return;
-
- const discount=Math.min(
-  Number(c.percent)||0,
-  100
- );
-
- const final=Math.max(
-  0,
-  Math.round(g.price*(1-discount/100))
- );
-
- sessionStorage.setItem(
-  "mb_coupon_"+id,
-  JSON.stringify({code:c.code})
- );
-
- document.getElementById("coupon-result-"+id).innerHTML=`
-
-  <div class="notice">
-
-   ✅ کد
-   <b>${esc(c.code)}</b>
-   اعمال شد.
-
-   <br>
-
-   تخفیف:
-   <b class="ok">${discount}%</b>
-
-   <br>
-
-   قیمت نهایی:
-   <b class="price">${money(final)}</b>
-
-  </div>
-
- `;
-
- toast("کد تخفیف اعمال شد 🎟️");
-}
-
-function clearCoupon(id){
- sessionStorage.removeItem("mb_coupon_"+id);
-}
-
-function freeDownload(id){
-
- const gs=get(K.games);
- const g=gs.find(x=>x.id==id);
-
- if(!g)return;
-
- if(!g.file){
-  toast("لینک دانلود برای این محصول تنظیم نشده است.");
-  return;
- }
-
- g.downloads=Number(g.downloads||0)+1;
-
- set(K.games,gs);
-
- window.open(g.file,"_blank");
-
- toast("دانلود شروع شد 📥");
+ </div>`;
 }
 
 function toggleFav(id){
-
  let f=get(K.fav);
-
- f=f.includes(id)
-  ?f.filter(x=>x!=id)
-  :[...f,id];
-
+ f=f.includes(id)?f.filter(x=>x!=id):[...f,id];
  set(K.fav,f);
-
  toast("ذخیره شد ❤️");
-
  render();
 }
 
 function favorites(){
-
  const f=get(K.fav);
-
- const g=get(K.games)
-  .filter(x=>f.includes(x.id));
-
- return `
- <h1>❤️ علاقه‌مندی‌ها</h1>
-
- <div class="grid">
-
-  ${
-   g.map(gameCard).join("")||
-   `<div class="notice">
-    هنوز بازی‌ای اضافه نکردی.
-   </div>`
-  }
-
- </div>
- `;
+ const g=get(K.games).filter(x=>f.includes(x.id));
+ return `<h1>❤️ علاقه‌مندی‌ها</h1><div class="grid">${g.map(gameCard).join("")||`<div class="notice">هنوز بازی‌ای اضافه نکردی.</div>`}</div>`;
 }
 
 function news(){
-
- return `
- <h1>📰 اخبار</h1>
-
- <div class="grid">
-
- ${get(K.news).map(n=>`
-
-  <article class="card">
-
-   <span class="tag">${esc(n.date)}</span>
-
-   <h2>${esc(n.title)}</h2>
-
-   <p class="muted">${esc(n.text)}</p>
-
-   <button class="btn"
-    onclick="go('#/news/${n.id}')">
-    خواندن خبر
-   </button>
-
-  </article>
-
- `).join("")}
-
- </div>
- `;
+ return `<h1>📰 اخبار</h1><div class="grid">${get(K.news).map(n=>`
+ <article class="card">
+  <span class="tag">${esc(n.date)}</span><h2>${esc(n.title)}</h2>
+  <p class="muted">${esc(n.text)}</p>
+  <button class="btn" onclick="go('#/news/${n.id}')">خواندن خبر</button>
+ </article>`).join("")}</div>`;
 }
 
 function newsDetail(id){
-
  const n=get(K.news).find(x=>x.id==id);
-
  if(!n)return shell("خطا","خبر پیدا نشد.");
-
- return `
- <div class="pagebox">
-
-  <span class="tag">${esc(n.date)}</span>
-
-  <h1>${esc(n.title)}</h1>
-
-  <p class="muted" style="font-size:16px">
-   ${esc(n.text)}
-  </p>
-
-  <button class="btn"
-   onclick="go('#/news')">
-   بازگشت
-  </button>
-
- </div>
- `;
+ return `<div class="pagebox"><span class="tag">${esc(n.date)}</span><h1>${esc(n.title)}</h1><p class="muted" style="font-size:16px">${esc(n.text)}</p><button class="btn" onclick="go('#/news')">بازگشت</button></div>`;
 }
 
 function searchPage(){
-
- return `
- <h1>🔎 جستجوی سریع</h1>
-
- <input class="search"
-  placeholder="نام بازی یا خبر..."
-  oninput="globalSearch(this.value)">
-
- <div id="results"></div>
- `;
+ return `<h1>🔎 جستجوی سریع</h1><input class="search" placeholder="نام بازی یا خبر..." oninput="globalSearch(this.value)"><div id="results"></div>`;
 }
 
 function globalSearch(q){
-
  const r=document.getElementById("results");
-
- if(!q){
-  r.innerHTML="";
-  return;
- }
-
- const gs=get(K.games)
-  .filter(x=>x.title.includes(q));
-
- const ns=get(K.news)
-  .filter(x=>x.title.includes(q));
-
+ if(!q){r.innerHTML="";return}
+ const gs=get(K.games).filter(x=>x.title.includes(q));
+ const ns=get(K.news).filter(x=>x.title.includes(q));
  r.innerHTML=`
-
- <h3>🎮 بازی‌ها</h3>
-
- <div class="grid">
-  ${gs.map(gameCard).join("")||"موردی نیست"}
- </div>
-
+ <h3>🎮 بازی‌ها</h3><div class="grid">${gs.map(gameCard).join("")||"موردی نیست"}</div>
  <h3>📰 اخبار</h3>
-
- ${
-  ns.map(n=>`
-   <div class="notice">
-
-    ${esc(n.title)}
-
-    <button class="mini"
-     onclick="go('#/news/${n.id}')">
-     باز کن
-    </button>
-
-   </div>
-  `).join("")||"موردی نیست"
- }
-
- `;
+ ${ns.map(n=>`<div class="notice">${esc(n.title)} <button class="mini" onclick="go('#/news/${n.id}')">باز کن</button></div>`).join("")||"موردی نیست"}`;
 }
 
 function register(){
-
  return `
  <div class="pagebox">
-
  <h1>📝 ساخت حساب</h1>
-
- <form class="form"
-  onsubmit="doRegister(event)">
-
-  <input id="regName"
-   required
-   placeholder="نام کاربری">
-
-  <input id="regPhone"
-   required
-   placeholder="شماره موبایل">
-
-  <input id="regPass"
-   required
-   type="password"
-   placeholder="رمز عبور">
-
-  <label>
-   <input id="regAgree"
-    type="checkbox"
-    required>
-   قوانین سایت را قبول دارم.
-  </label>
-
-  <button class="btn"
-   type="submit">
-   ساخت حساب
-  </button>
-
+ <form class="form" onsubmit="doRegister(event)">
+  <input id="regName" required placeholder="نام کاربری">
+  <input id="regPhone" required placeholder="شماره موبایل">
+  <input id="regPass" required type="password" placeholder="رمز عبور">
+  <label><input id="regAgree" type="checkbox" required> قوانین سایت را قبول دارم.</label>
+  <button class="btn" type="submit">ساخت حساب</button>
  </form>
-
- </div>
- `;
+ <p class="muted">حساب برای دمو در حافظه همین مرورگر ذخیره می‌شود.</p>
+ </div>`;
 }
 
 function doRegister(e){
-
  e.preventDefault();
-
  const users=get(K.users);
-
- const name=
-  document.getElementById("regName")
-  .value.trim();
-
- if(users.some(x=>x.name===name)){
-  toast("این نام کاربری وجود دارد.");
-  return;
- }
-
- users.push({
-
-  id:Date.now(),
-
-  name:name,
-
-  phone:
-   document.getElementById("regPhone").value,
-
-  pass:
-   document.getElementById("regPass").value,
-
-  vipUntil:0,
-
-  vipDownloads:0
-
- });
-
+ const name=document.getElementById("regName").value.trim();
+ if(users.some(x=>x.name===name)){toast("این نام کاربری وجود دارد.");return}
+ users.push({id:Date.now(),name,phone:document.getElementById("regPhone").value,pass:document.getElementById("regPass").value});
  set(K.users,users);
-
  toast("حساب ساخته شد ✅");
-
  go("#/login");
 }
 
 function login(){
-
  return `
  <div class="pagebox">
-
  <h1>🔐 ورود</h1>
-
- <form class="form"
-  onsubmit="doLogin(event)">
-
-  <input id="loginName"
-   required
-   placeholder="نام کاربری">
-
-  <input id="loginPass"
-   required
-   type="password"
-   placeholder="رمز عبور">
-
-  <button class="btn"
-   type="submit">
-   ورود
-  </button>
-
+ <form class="form" onsubmit="doLogin(event)">
+  <input id="loginName" required placeholder="نام کاربری">
+  <input id="loginPass" required type="password" placeholder="رمز عبور">
+  <button class="btn" type="submit">ورود</button>
  </form>
-
- <br>
-
- <button class="mini"
-  onclick="go('#/register')">
-  ساخت حساب جدید
- </button>
-
- </div>
- `;
+ <br><button class="mini" onclick="go('#/register')">ساخت حساب جدید</button>
+ </div>`;
 }
 
 function doLogin(e){
-
  e.preventDefault();
-
- const name=
-  document.getElementById("loginName").value;
-
- const pass=
-  document.getElementById("loginPass").value;
-
- const u=get(K.users)
-  .find(x=>x.name===name&&x.pass===pass);
-
- if(!u){
-  toast("نام کاربری یا رمز اشتباه است ❌");
-  return;
- }
-
+ const name=document.getElementById("loginName").value;
+ const pass=document.getElementById("loginPass").value;
+ const u=get(K.users).find(x=>x.name===name&&x.pass===pass);
+ if(!u){toast("نام کاربری یا رمز اشتباه است ❌");return}
  localStorage.mbUser=JSON.stringify(u);
-
  toast("خوش آمدی 🎮");
-
  go("#/home");
 }
 
 function buy(id){
-
- if(!currentUser()){
-  toast("ابتدا وارد حساب شوید 🔐");
-  go("#/login");
-  return;
- }
-
- const g=get(K.games)
-  .find(x=>x.id==id);
-
+ if(!localStorage.mbUser){toast("ابتدا وارد حساب شوید 🔐");go("#/login");return}
+ const g=get(K.games).find(x=>x.id==id);
  if(!g)return;
-
- if(!g.price){
-  toast("این محصول رایگان است.");
-  return;
- }
-
- const coupon=couponForGame(id);
-
- let amount=g.price;
- let discount=0;
- let couponCode="";
-
- if(coupon){
-
-  discount=Math.min(
-   Number(coupon.percent)||0,
-   100
-  );
-
-  amount=Math.max(
-   0,
-   Math.round(g.price*(1-discount/100))
-  );
-
-  couponCode=coupon.code;
- }
-
- const user=currentUser();
-
+ if(!g.price){toast("این محصول رایگان است.");return}
  const orders=get(K.orders);
-
- orders.push({
-
-  id:Date.now(),
-
-  type:"game",
-
-  gameId:g.id,
-
-  user:user.name,
-
-  userId:user.id,
-
-  amount:amount,
-
-  originalAmount:g.price,
-
-  discount:discount,
-
-  coupon:couponCode,
-
-  status:"pending",
-
-  receipt:"",
-
-  date:new Date().toLocaleString("fa-IR")
-
- });
-
+ const o={id:Date.now(),gameId:g.id,user:JSON.parse(localStorage.mbUser).name,amount:g.price,status:"pending",receipt:"",date:new Date().toLocaleString("fa-IR")};
+ orders.push(o);
  set(K.orders,orders);
-
- clearCoupon(id);
-
  toast("سفارش ثبت شد 🛒");
-
  go("#/orders");
 }
 
 function orders(){
-
- if(!currentUser()){
-
-  return shell(
-   "🔐 سفارش‌ها",
-
-   `<p>
-    برای دیدن سفارش‌ها وارد حساب شوید.
-   </p>
-
-   <button class="btn"
-    onclick="go('#/login')">
-    ورود
-   </button>`
-  );
+ if(!localStorage.mbUser){
+  return shell("🔐 سفارش‌ها",`<p>برای دیدن سفارش‌ها وارد حساب شوید.</p><button class="btn" onclick="go('#/login')">ورود</button>`);
  }
-
- const user=currentUser();
-
- const os=get(K.orders)
-  .filter(x=>
-   x.user===user.name ||
-   x.userId===user.id
-  );
-
+ const user=JSON.parse(localStorage.mbUser).name;
+ const os=get(K.orders).filter(x=>x.user===user);
  const settings=get(K.settings);
-
  return `
  <h1>🛒 سفارش‌های من</h1>
-
- ${
-  isVip()
-  ?
-  `<div class="notice vipbox">
-   👑 <b>VIP فعال است</b><br>
-   زمان باقی‌مانده:
-   ${formatRemaining(vipRemaining())}
-  </div>`
-  :""
- }
-
- <div class="notice">
-
- <b>💳 اطلاعات پرداخت</b>
-
- <br><br>
-
- ${
-  settings.card
-  ?
-  `
-   شماره کارت:
-   <b>${esc(settings.card)}</b><br>
-
-   صاحب حساب:
-   <b>${esc(settings.owner)}</b><br>
-
-   ${
-    settings.account
-    ?
-    `شماره حساب:
-     <b>${esc(settings.account)}</b><br>`
-    :""
-   }
-
-   ${
-    settings.phone
-    ?
-    `شماره تماس:
-     <b>${esc(settings.phone)}</b><br>`
-    :""
-   }
-
-   ${
-    settings.description
-    ?
-    `<p class="muted">
-      ${esc(settings.description)}
-     </p>`
-    :""
-   }
-  `
-  :
-  "اطلاعات پرداخت هنوز توسط مدیریت تنظیم نشده است."
- }
-
+ <div class="notice"><b>💳 اطلاعات پرداخت</b><br><br>
+ ${settings.card?`شماره کارت: <b>${esc(settings.card)}</b><br>صاحب حساب: <b>${esc(settings.owner)}</b><br>${settings.account?`شماره حساب: <b>${esc(settings.account)}</b><br>`:""}`:"اطلاعات پرداخت هنوز توسط مدیریت تنظیم نشده است."}
  </div>
-
  <div class="grid">
-
- ${
-  os.map(o=>{
-
-   const g=
-    o.type==="vip"
-    ?null
-    :get(K.games).find(x=>x.id==o.gameId);
-
-   const vipPlan=
-    o.type==="vip"
-    ?get(K.vip).find(x=>x.id==o.vipId)
-    :null;
-
-   const title=
-    o.type==="vip"
-    ?(vipPlan?.title||"اشتراک VIP")
-    :(g?.title||"محصول حذف‌شده");
-
-   return `
-
-   <article class="card">
-
-    <h3>
-     ${esc(title)}
-    </h3>
-
-    <div class="price">
-     ${money(o.amount)}
-    </div>
-
-    ${
-     o.discount
-     ?
-     `<p class="ok">
-      🎟️ تخفیف ${o.discount}%
-      ${o.coupon?`(${esc(o.coupon)})`:""}
-     </p>`
-     :""
-    }
-
-    <p class="muted">
-
-     کد سفارش:
-     ${o.id}
-
-     <br>
-
-     تاریخ:
-     ${esc(o.date)}
-
-     <br>
-
-     وضعیت:
-     <b class="${o.status==='paid'?'ok':''}">
-      ${statusText(o.status)}
-     </b>
-
-    </p>
-
-    ${
-     o.status==="pending"
-     ?
-     `<button class="btn"
-      onclick="uploadReceipt(${o.id})">
-      📸 ارسال رسید
-     </button>`
-     :""
-    }
-
-    ${
-     o.status==="paid"&&
-     o.type==="game"&&
-     g?.file
-     ?
-     `<button class="btn"
-      onclick="downloadProduct(${o.id})">
-      📥 دانلود محصول
-     </button>`
-     :""
-    }
-
-    ${
-     o.status==="paid"&&
-     o.type==="vip"
-     ?
-     `<div class="notice ok">
-       👑 اشتراک VIP فعال شد.
-      </div>`
-     :""
-    }
-
-   </article>
-   `;
-
-  }).join("")
-
-  ||
-
-  `<div class="notice">
-   هنوز سفارشی نداری.
-  </div>`
- }
-
- </div>
- `;
-}
-
-function formatRemaining(ms){
-
- let sec=Math.floor(ms/1000);
-
- const days=Math.floor(sec/86400);
- sec%=86400;
-
- const hours=Math.floor(sec/3600);
- sec%=3600;
-
- const mins=Math.floor(sec/60);
-
- return `${days} روز و ${hours} ساعت و ${mins} دقیقه`;
+ ${os.map(o=>{
+  const g=get(K.games).find(x=>x.id==o.gameId);
+  return `<article class="card">
+   <h3>${esc(g?.title||"محصول حذف‌شده")}</h3>
+   <div class="price">${money(o.amount)}</div>
+   <p class="muted">کد سفارش: ${o.id}<br>تاریخ: ${esc(o.date)}<br>وضعیت: <b class="${o.status==='paid'?'ok':''}">${statusText(o.status)}</b></p>
+   ${o.status==="pending"?`<button class="btn" onclick="uploadReceipt(${o.id})">📸 ارسال رسید</button>`:""}
+   ${o.status==="paid"&&g?.file?`<button class="btn" onclick="downloadProduct(${o.id})">📥 دانلود محصول</button>`:""}
+  </article>`;
+ }).join("")||`<div class="notice">هنوز سفارشی نداری.</div>`}
+ </div>`;
 }
 
 function statusText(s){
-
- return {
-
-  pending:"منتظر پرداخت",
-
-  review:"در حال بررسی رسید",
-
-  paid:"پرداخت تأیید شد",
-
-  rejected:"رسید رد شد"
-
- }[s]||s;
+ return {pending:"منتظر پرداخت",review:"در حال بررسی رسید",paid:"پرداخت تأیید شد",rejected:"رسید رد شد"}[s]||s;
 }
 
 function uploadReceipt(id){
-
  const input=document.createElement("input");
-
  input.type="file";
  input.accept="image/*,.pdf";
-
  input.onchange=()=>{
-
   const file=input.files[0];
-
   if(!file)return;
-
-  if(file.size>1200*1024){
-
-   toast("رسید باید کمتر از 1.2MB باشد.");
-
-   return;
-  }
-
+  if(file.size>1200*1024){toast("رسید باید کمتر از 1.2MB باشد.");return}
   const reader=new FileReader();
-
   reader.onload=()=>{
-
    const os=get(K.orders);
-
    const o=os.find(x=>x.id==id);
-
    if(!o)return;
-
    o.receipt=reader.result;
-
    o.status="review";
-
    set(K.orders,os);
-
    toast("رسید ارسال شد ✅");
-
    render();
   };
-
   reader.readAsDataURL(file);
  };
-
  input.click();
 }
 
-function vipPage(){
-
- const plans=get(K.vip);
-
- return `
- <h1>👑 اشتراک VIP</h1>
-
- ${
-  isVip()
-  ?
-  `<div class="notice vipbox">
-
-   <h2>👑 VIP شما فعال است</h2>
-
-   <p>
-    زمان باقی‌مانده:
-    <b>${formatRemaining(vipRemaining())}</b>
-   </p>
-
-  </div>`
-  :""
- }
-
- <div class="grid">
-
- ${
-  plans.map(v=>`
-
-   <article class="card vipbox">
-
-    <span class="tag">👑 VIP</span>
-
-    <h2>${esc(v.title)}</h2>
-
-    <p class="muted">
-     ${esc(v.description||"اشتراک ویژه MB MODS")}
-    </p>
-
-    <p>
-     ⏳ مدت:
-     <b>${Number(v.days).toLocaleString("fa-IR")} روز</b>
-    </p>
-
-    <p>
-     📥 دانلود مجاز:
-     <b>
-      ${
-       Number(v.downloads)
-       ?Number(v.downloads).toLocaleString("fa-IR")
-       :"نامحدود"
-      }
-     </b>
-    </p>
-
-    <div class="vipprice">
-     ${money(v.price)}
-    </div>
-
-    <button class="btn"
-     onclick="buyVip(${v.id})">
-     👑 خرید اشتراک
-    </button>
-
-   </article>
-
- `).join("")
-
- ||
- `<div class="notice">
-  هنوز اشتراک VIP ساخته نشده است.
- </div>`
- }
-
- </div>
- `;
-}
-
-function buyVip(id){
-
- if(!currentUser()){
-
-  toast("برای خرید VIP ابتدا وارد شوید.");
-
-  go("#/login");
-
-  return;
- }
-
- const plan=get(K.vip)
-  .find(x=>x.id==id);
-
- if(!plan)return;
-
- const user=currentUser();
-
- const orders=get(K.orders);
-
- orders.push({
-
-  id:Date.now(),
-
-  type:"vip",
-
-  vipId:plan.id,
-
-  user:user.name,
-
-  userId:user.id,
-
-  amount:Number(plan.price)||0,
-
-  days:Number(plan.days)||30,
-
-  downloads:Number(plan.downloads)||0,
-
-  discount:0,
-
-  coupon:"",
-
-  status:"pending",
-
-  receipt:"",
-
-  date:new Date().toLocaleString("fa-IR")
-
- });
-
- set(K.orders,orders);
-
- toast("سفارش VIP ثبت شد 👑");
-
- go("#/orders");
-}
-
 function adminLogin(){
-
  return `
  <div class="pagebox">
-
-  <h1>🔐 ورود مدیر</h1>
-
-  <p class="muted">
-   برای ورود به پنل مدیریت، اطلاعات مدیر را وارد کنید.
-  </p>
-
-  <form class="form"
-   onsubmit="doAdminLogin(event)">
-
-   <input
-    id="adminName"
-    required
-    autocomplete="username"
-    placeholder="👤 نام کاربری مدیر">
-
-   <input
-    id="adminPass"
-    required
-    type="password"
-    autocomplete="current-password"
-    placeholder="🔑 رمز عبور">
-
-   <button class="btn red"
-    type="submit">
-    🚀 ورود به پنل مدیریت
-   </button>
-
-  </form>
-
- </div>
- `;
+ <h1>🔐 ورود مدیر</h1>
+ <p class="muted">برای ورود به پنل مدیریت، اطلاعات مدیر را وارد کنید.</p>
+ <form class="form" onsubmit="doAdminLogin(event)">
+  <input id="adminName" required autocomplete="username" placeholder="👤 نام کاربری مدیر">
+  <input id="adminPass" required type="password" autocomplete="current-password" placeholder="🔑 رمز عبور">
+  <button class="btn red" type="submit">🚀 ورود به پنل مدیریت</button>
+ </form>
+ </div>`;
 }
 
 function doAdminLogin(e){
-
  e.preventDefault();
-
- const n=
-  document.getElementById("adminName").value;
-
- const p=
-  document.getElementById("adminPass").value;
-
+ const n=document.getElementById("adminName").value;
+ const p=document.getElementById("adminPass").value;
  if(n==="admin"&&p==="MBMODS@2026"){
-
   localStorage.mbAdmin="1";
-
   toast("ورود موفق بود 👑");
-
   go("#/admin");
-
- }else{
-
-  toast("اطلاعات مدیریت اشتباه است ❌");
-
- }
+ }else{toast("اطلاعات مدیریت اشتباه است ❌")}
 }
 
 function admin(){
-
- if(!localStorage.mbAdmin){
-
-  go("#/admin/login");
-
-  return "";
- }
-
- const games=get(K.games);
- const news=get(K.news);
- const orders=get(K.orders);
- const users=get(K.users);
- const coupons=get(K.coupons);
- const vip=get(K.vip);
-
- const views=games.reduce(
-  (a,b)=>a+Number(b.views||0),0
- );
-
- const downloads=games.reduce(
-  (a,b)=>a+Number(b.downloads||0),0
- );
-
- const sales=games.reduce(
-  (a,b)=>a+Number(b.sales||0),0
- );
-
- const revenue=orders
-  .filter(x=>x.status==="paid")
-  .reduce((a,b)=>a+Number(b.amount||0),0);
-
+ if(!localStorage.mbAdmin){go("#/admin/login");return ""}
+ const games=get(K.games),news=get(K.news),orders=get(K.orders),users=get(K.users);
  return `
-
  <h1>👑 پنل مدیریت MB MODS</h1>
-
  <div class="adminnav">
-
-  <button class="mini"
-   onclick="go('#/admin')">
-   📊 داشبورد
-  </button>
-
-  <button class="mini"
-   onclick="go('#/admin/games')">
-   🎮 بازی‌ها
-  </button>
-
-  <button class="mini"
-   onclick="go('#/admin/coupons')">
-   🎟️ کد تخفیف
-  </button>
-
-  <button class="mini"
-   onclick="go('#/admin/vip')">
-   👑 VIP
-  </button>
-
-  <button class="mini"
-   onclick="go('#/admin/news')">
-   📰 اخبار
-  </button>
-
-  <button class="mini"
-   onclick="go('#/admin/orders')">
-   🛒 سفارش‌ها
-  </button>
-
-  <button class="mini"
-   onclick="go('#/admin/users')">
-   👥 کاربران
-  </button>
-
-  <button class="mini"
-   onclick="go('#/admin/settings')">
-   💳 پرداخت
-  </button>
-
-  <button class="mini"
-   onclick="go('#/admin/backup')">
-   💾 بکاپ
-  </button>
-
-  <button class="mini"
-   onclick="adminLogout()">
-   🚪 خروج
-  </button>
-
+  <button class="mini" onclick="go('#/admin')">📊 داشبورد</button>
+  <button class="mini" onclick="go('#/admin/games')">🎮 بازی‌ها</button>
+  <button class="mini" onclick="go('#/admin/news')">📰 اخبار</button>
+  <button class="mini" onclick="go('#/admin/orders')">🛒 سفارش‌ها</button>
+  <button class="mini" onclick="go('#/admin/users')">👥 کاربران</button>
+  <button class="mini" onclick="go('#/admin/settings')">💳 تنظیمات پرداخت</button>
+  <button class="mini" onclick="adminLogout()">🚪 خروج</button>
  </div>
-
  <div class="grid">
-
-  <div class="card">
-   <h2>🎮</h2>
-   <div class="stat">${games.length}</div>
-   <p class="muted">بازی</p>
-  </div>
-
-  <div class="card">
-   <h2>📰</h2>
-   <div class="stat">${news.length}</div>
-   <p class="muted">خبر</p>
-  </div>
-
-  <div class="card">
-   <h2>🛒</h2>
-   <div class="stat">${orders.length}</div>
-   <p class="muted">سفارش</p>
-  </div>
-
-  <div class="card">
-   <h2>👥</h2>
-   <div class="stat">${users.length}</div>
-   <p class="muted">کاربر</p>
-  </div>
-
-  <div class="card">
-   <h2>👁️</h2>
-   <div class="stat">
-    ${views.toLocaleString("fa-IR")}
-   </div>
-   <p class="muted">بازدید کل</p>
-  </div>
-
-  <div class="card">
-   <h2>📥</h2>
-   <div class="stat">
-    ${downloads.toLocaleString("fa-IR")}
-   </div>
-   <p class="muted">دانلود کل</p>
-  </div>
-
-  <div class="card">
-   <h2>💰</h2>
-   <div class="stat">
-    ${sales.toLocaleString("fa-IR")}
-   </div>
-   <p class="muted">فروش محصول</p>
-  </div>
-
-  <div class="card">
-   <h2>💳</h2>
-   <div class="stat">
-    ${money(revenue)}
-   </div>
-   <p class="muted">درآمد تأییدشده</p>
-  </div>
-
-  <div class="card">
-   <h2>🎟️</h2>
-   <div class="stat">${coupons.length}</div>
-   <p class="muted">کد تخفیف</p>
-  </div>
-
-  <div class="card">
-   <h2>👑</h2>
-   <div class="stat">${vip.length}</div>
-   <p class="muted">پلن VIP</p>
-  </div>
-
+  <div class="card"><h2>🎮</h2><b>${games.length}</b><p class="muted">بازی</p></div>
+  <div class="card"><h2>📰</h2><b>${news.length}</b><p class="muted">خبر</p></div>
+  <div class="card"><h2>🛒</h2><b>${orders.length}</b><p class="muted">سفارش</p></div>
+  <div class="card"><h2>👥</h2><b>${users.length}</b><p class="muted">کاربر</p></div>
  </div>
-
- <div class="section">
-
-  <div class="pagebox">
-
-   <h2>⚡ دسترسی سریع</h2>
-
-   <div class="actions">
-
-    <button class="btn"
-     onclick="go('#/admin/games')">
-     ➕ افزودن بازی
-    </button>
-
-    <button class="btn"
-     onclick="go('#/admin/coupons')">
-     🎟️ ساخت کد تخفیف
-    </button>
-
-    <button class="btn"
-     onclick="go('#/admin/vip')">
-     👑 ساخت VIP
-    </button>
-
-    <button class="btn"
-     onclick="go('#/admin/news')">
-     ➕ افزودن خبر
-    </button>
-
-   </div>
-
-  </div>
-
- </div>
- `;
+ <div class="section"><div class="pagebox"><h2>⚡ دسترسی سریع</h2>
+ <div class="actions">
+ <button class="btn" onclick="go('#/admin/games')">➕ افزودن بازی</button>
+ <button class="btn" onclick="go('#/admin/news')">➕ افزودن خبر</button>
+ <button class="btn" onclick="go('#/admin/settings')">💳 تنظیم پرداخت</button>
+ </div></div></div>`;
 }
 
 function adminLogout(){
-
  localStorage.removeItem("mbAdmin");
-
  toast("خارج شدی.");
-
  go("#/home");
 }
 
 function adminGames(){
-
  const gs=get(K.games);
-
  return `
  <div class="pagebox">
-
  <h1>🎮 مدیریت بازی‌ها</h1>
-
- <form class="form"
-  onsubmit="addGame(event)">
-
-  <input id="gTitle"
-   required
-   placeholder="نام بازی">
-
-  <div class="two">
-
-   <input id="gGenre"
-    placeholder="ژانر">
-
-   <input id="gPlatform"
-    placeholder="پلتفرم">
-
-  </div>
-
-  <div class="two">
-
-   <input id="gVersion"
-    placeholder="نسخه">
-
-   <input id="gSize"
-    placeholder="حجم">
-
-  </div>
-
-  <div class="two">
-
-   <input id="gPrice"
-    type="number"
-    min="0"
-    placeholder="قیمت تومان">
-
-   <input id="gOld"
-    type="number"
-    min="0"
-    placeholder="قیمت قبلی">
-
-  </div>
-
-  <input id="gIcon"
-   placeholder="ایموجی آیکون، مثلا 🎮">
-
-  <label>🖼️ کاور بازی</label>
-
-  <input id="gCover"
-   type="file"
-   accept="image/*">
-
-  <textarea id="gDesc"
-   placeholder="توضیحات کامل بازی"></textarea>
-
-  <textarea id="gGuide"
-   placeholder="راهنمای نصب"></textarea>
-
-  <label>
-   🔗 لینک دانلود فایل بازی/مود
-  </label>
-
-  <input
-   id="gFile"
-   type="url"
-   placeholder="https://example.com/game.zip">
-
-  <button class="btn red">
-   ➕ افزودن محصول
-  </button>
-
+ <form class="form" onsubmit="addGame(event)">
+  <input id="gTitle" required placeholder="نام بازی">
+  <div class="two"><input id="gGenre" placeholder="ژانر"><input id="gPlatform" placeholder="پلتفرم"></div>
+  <div class="two"><input id="gVersion" placeholder="نسخه"><input id="gSize" placeholder="حجم"></div>
+  <div class="two"><input id="gPrice" type="number" min="0" placeholder="قیمت تومان"><input id="gOld" type="number" min="0" placeholder="قیمت قبلی"></div>
+  <input id="gIcon" placeholder="ایموجی آیکون، مثلا 🎮">
+  <label>🖼️ کاور بازی</label><input id="gCover" type="file" accept="image/*">
+  <textarea id="gDesc" placeholder="توضیحات کامل بازی"></textarea>
+  <textarea id="gGuide" placeholder="راهنمای نصب"></textarea>
+  <label>📦 فایل بازی/مود</label><input id="gFile" type="file">
+  <button class="btn red">➕ افزودن محصول</button>
  </form>
-
- <div class="notice">
-  🔗 فایل بازی دیگر داخل LocalStorage ذخیره نمی‌شود.
-  فقط لینک دانلود خارجی ذخیره می‌شود؛ بنابراین محدودیت ۵ مگابایت فایل بازی را نداری.
- </div>
-
- <hr>
-
- <div class="grid">
-
- ${gs.map(g=>`
-
-  <article class="card">
-
-   <div class="cover">
-
-    ${
-     g.cover
-     ?`<img src="${g.cover}">`
-     :esc(g.icon||"🎮")
-    }
-
-   </div>
-
-   <h3>${esc(g.title)}</h3>
-
-   <div class="price">
-    ${money(g.price)}
-   </div>
-
-   <p class="muted">
-
-    👁️ بازدید:
-    ${Number(g.views||0).toLocaleString("fa-IR")}
-
-    <br>
-
-    📥 دانلود:
-    ${Number(g.downloads||0).toLocaleString("fa-IR")}
-
-    <br>
-
-    💰 فروش:
-    ${Number(g.sales||0).toLocaleString("fa-IR")}
-
-   </p>
-
-   <p class="small">
-    🔗 ${g.file?"لینک دانلود تنظیم شده":"لینک دانلود ندارد"}
-   </p>
-
-   <div class="actions">
-
-    <button class="mini"
-     onclick="editGame(${g.id})">
-     ✏️ ویرایش
-    </button>
-
-    <button class="mini danger"
-     onclick="deleteGame(${g.id})">
-     🗑️ حذف
-    </button>
-
-   </div>
-
-  </article>
-
- `).join("")}
-
- </div>
-
- </div>
- `;
+ <div class="notice">⚠️ این نسخه فایل را داخل LocalStorage مرورگر ذخیره می‌کند. برای فایل‌های حجیم مناسب نیست.</div>
+ <hr><div class="grid">
+ ${gs.map(g=>`<article class="card"><div class="cover">${g.cover?`<img src="${g.cover}">`:esc(g.icon||"🎮")}</div>
+ <h3>${esc(g.title)}</h3><div class="price">${money(g.price)}</div>
+ <div class="actions"><button class="mini" onclick="editGame(${g.id})">✏️ ویرایش</button><button class="mini danger" onclick="deleteGame(${g.id})">🗑️ حذف</button></div>
+ </article>`).join("")}
+ </div></div>`;
 }
 
 function addGame(e){
-
  e.preventDefault();
-
- const cover=
-  document.getElementById("gCover").files[0];
-
- const downloadLink=
-  document.getElementById("gFile").value.trim();
-
- if(downloadLink){
-
-  try{
-
-   new URL(downloadLink);
-
-  }catch(e){
-
-   toast("لینک دانلود معتبر نیست ❌");
-
-   return;
-  }
- }
-
+ const file=document.getElementById("gFile").files[0];
+ const cover=document.getElementById("gCover").files[0];
+ if(file&&file.size>5*1024*1024){toast("فایل بازی برای LocalStorage باید کمتر از 5MB باشد.");return}
  const read=(f,cb)=>{
-
-  if(!f){
-   cb("");
-   return;
-  }
-
-  const r=new FileReader();
-
-  r.onload=()=>cb(r.result);
-
-  r.readAsDataURL(f);
+  if(!f){cb("");return}
+  const r=new FileReader();r.onload=()=>cb(r.result);r.readAsDataURL(f);
  };
-
  read(cover,coverData=>{
-
-  const gs=get(K.games);
-
-  gs.push({
-
-   id:Date.now(),
-
-   title:
-    document.getElementById("gTitle").value,
-
-   genre:
-    document.getElementById("gGenre").value,
-
-   platform:
-    document.getElementById("gPlatform").value,
-
-   version:
-    document.getElementById("gVersion").value,
-
-   size:
-    document.getElementById("gSize").value,
-
-   price:
-    Number(document.getElementById("gPrice").value)||0,
-
-   old:
-    Number(document.getElementById("gOld").value)||0,
-
-   icon:
-    document.getElementById("gIcon").value||"🎮",
-
-   cover:coverData,
-
-   desc:
-    document.getElementById("gDesc").value,
-
-   guide:
-    document.getElementById("gGuide").value,
-
-   file:downloadLink,
-
-   views:0,
-
-   downloads:0,
-
-   sales:0
-
+  read(file,fileData=>{
+   const gs=get(K.games);
+   gs.push({
+    id:Date.now(),
+    title:document.getElementById("gTitle").value,
+    genre:document.getElementById("gGenre").value,
+    platform:document.getElementById("gPlatform").value,
+    version:document.getElementById("gVersion").value,
+    size:document.getElementById("gSize").value,
+    price:Number(document.getElementById("gPrice").value)||0,
+    old:Number(document.getElementById("gOld").value)||0,
+    icon:document.getElementById("gIcon").value||"🎮",
+    cover:coverData,
+    desc:document.getElementById("gDesc").value,
+    guide:document.getElementById("gGuide").value,
+    file:fileData
+   });
+   if(set(K.games,gs)){toast("بازی اضافه شد 🎮");go("#/admin/games")}
   });
-
-  if(set(K.games,gs)){
-
-   toast("بازی اضافه شد 🎮");
-
-   go("#/admin/games");
-  }
-
  });
 }
 
 function editGame(id){
-
- const gs=get(K.games);
-
- const g=gs.find(x=>x.id==id);
-
+ const g=get(K.games).find(x=>x.id==id);
  if(!g)return;
-
- const title=
-  prompt("نام بازی:",g.title);
-
+ const title=prompt("نام بازی:",g.title);
  if(title===null)return;
-
- const price=
-  prompt("قیمت تومان:",g.price);
-
+ const price=prompt("قیمت تومان:",g.price);
  if(price===null)return;
-
- const link=
-  prompt(
-   "🔗 لینک دانلود:",
-   g.file||""
-  );
-
- if(link===null)return;
-
- const desc=
-  prompt("توضیحات:",g.desc);
-
+ const desc=prompt("توضیحات:",g.desc);
  if(desc===null)return;
-
- g.title=title;
-
- g.price=Number(price)||0;
-
- g.file=link.trim();
-
- g.desc=desc;
-
- set(K.games,gs);
-
+ g.title=title;g.price=Number(price)||0;g.desc=desc;
+ set(K.games,get(K.games));
  toast("بازی ویرایش شد ✏️");
-
  render();
 }
 
 function deleteGame(id){
-
  if(!confirm("این بازی حذف شود؟"))return;
-
- set(
-  K.games,
-  get(K.games).filter(x=>x.id!=id)
- );
-
+ set(K.games,get(K.games).filter(x=>x.id!=id));
  toast("بازی حذف شد 🗑️");
-
- render();
-}
-
-function adminCoupons(){
-
- const cs=get(K.coupons);
-
- return `
- <div class="pagebox">
-
- <h1>🎟️ مدیریت کدهای تخفیف</h1>
-
- <form class="form"
-  onsubmit="addCoupon(event)">
-
-  <input
-   id="couponCode"
-   required
-   placeholder="کد تخفیف مثلا MB20">
-
-  <input
-   id="couponPercent"
-   type="number"
-   min="1"
-   max="100"
-   required
-   placeholder="درصد تخفیف مثلا 20">
-
-  <input
-   id="couponDays"
-   type="number"
-   min="0"
-   placeholder="مدت اعتبار به روز - خالی = بدون انقضا">
-
-  <button class="btn red">
-   ➕ ساخت کد تخفیف
-  </button>
-
- </form>
-
- <hr>
-
- <div class="grid">
-
- ${
-  cs.map(c=>`
-
-   <article class="card">
-
-    <span class="tag">🎟️ تخفیف</span>
-
-    <h2>${esc(c.code)}</h2>
-
-    <div class="price">
-     ${Number(c.percent)}%
-    </div>
-
-    <p class="muted">
-
-     ${
-      c.expires
-      ?
-      "انقضا: "+
-      new Date(c.expires)
-       .toLocaleDateString("fa-IR")
-      :
-      "بدون تاریخ انقضا"
-     }
-
-    </p>
-
-    <button
-     class="mini danger"
-     onclick="deleteCoupon(${c.id})">
-     🗑️ حذف
-    </button>
-
-   </article>
-
-  `).join("")
-
-  ||
-
-  `<div class="notice">
-   هنوز کد تخفیفی ساخته نشده است.
-  </div>`
- }
-
- </div>
-
- </div>
- `;
-}
-
-function addCoupon(e){
-
- e.preventDefault();
-
- const code=
-  document.getElementById("couponCode")
-  .value.trim()
-  .toUpperCase();
-
- const percent=
-  Number(
-   document.getElementById("couponPercent").value
-  );
-
- const days=
-  Number(
-   document.getElementById("couponDays").value
-  );
-
- if(percent<1||percent>100){
-
-  toast("درصد تخفیف باید بین ۱ تا ۱۰۰ باشد.");
-
-  return;
- }
-
- const cs=get(K.coupons);
-
- if(cs.some(x=>x.code===code)){
-
-  toast("این کد قبلاً ساخته شده.");
-
-  return;
- }
-
- let expires=0;
-
- if(days>0){
-
-  expires=
-   Date.now()+
-   days*86400000;
- }
-
- cs.push({
-
-  id:Date.now(),
-
-  code:code,
-
-  percent:percent,
-
-  expires:expires,
-
-  active:true
-
- });
-
- set(K.coupons,cs);
-
- toast("کد تخفیف ساخته شد 🎟️");
-
- go("#/admin/coupons");
-}
-
-function deleteCoupon(id){
-
- if(!confirm("این کد حذف شود؟"))return;
-
- set(
-  K.coupons,
-  get(K.coupons).filter(x=>x.id!=id)
- );
-
- toast("کد حذف شد.");
-
- render();
-}
-
-function adminVip(){
-
- const plans=get(K.vip);
-
- return `
- <div class="pagebox">
-
- <h1>👑 مدیریت اشتراک VIP</h1>
-
- <form class="form"
-  onsubmit="addVip(event)">
-
-  <input
-   id="vipTitle"
-   required
-   placeholder="نام اشتراک، مثلا VIP یک ماهه">
-
-  <input
-   id="vipDays"
-   type="number"
-   min="1"
-   required
-   placeholder="مدت به روز">
-
-  <input
-   id="vipPrice"
-   type="number"
-   min="0"
-   required
-   placeholder="قیمت تومان">
-
-  <input
-   id="vipDownloads"
-   type="number"
-   min="0"
-   placeholder="تعداد دانلود مجاز - صفر = نامحدود">
-
-  <textarea
-   id="vipDescription"
-   placeholder="توضیحات اشتراک"></textarea>
-
-  <button class="btn red">
-   ➕ ساخت اشتراک VIP
-  </button>
-
- </form>
-
- <hr>
-
- <div class="grid">
-
- ${
-  plans.map(v=>`
-
-   <article class="card vipbox">
-
-    <span class="tag">👑 VIP</span>
-
-    <h2>${esc(v.title)}</h2>
-
-    <div class="vipprice">
-     ${money(v.price)}
-    </div>
-
-    <p class="muted">
-
-     ⏳ ${Number(v.days)}
-     روز
-
-     <br>
-
-     📥
-     ${
-      Number(v.downloads)
-      ?Number(v.downloads)+" دانلود"
-      :"دانلود نامحدود"
-     }
-
-    </p>
-
-    <div class="actions">
-
-     <button
-      class="mini"
-      onclick="editVip(${v.id})">
-      ✏️ ویرایش
-     </button>
-
-     <button
-      class="mini danger"
-      onclick="deleteVip(${v.id})">
-      🗑️ حذف
-     </button>
-
-    </div>
-
-   </article>
-
-  `).join("")
-
- }
-
- </div>
-
- </div>
- `;
-}
-
-function addVip(e){
-
- e.preventDefault();
-
- const plans=get(K.vip);
-
- plans.push({
-
-  id:Date.now(),
-
-  title:
-   document.getElementById("vipTitle").value,
-
-  days:
-   Number(
-    document.getElementById("vipDays").value
-   )||30,
-
-  price:
-   Number(
-    document.getElementById("vipPrice").value
-   )||0,
-
-  downloads:
-   Number(
-    document.getElementById("vipDownloads").value
-   )||0,
-
-  description:
-   document.getElementById("vipDescription").value
-
- });
-
- set(K.vip,plans);
-
- toast("اشتراک VIP ساخته شد 👑");
-
- go("#/admin/vip");
-}
-
-function editVip(id){
-
- const plans=get(K.vip);
-
- const v=plans.find(x=>x.id==id);
-
- if(!v)return;
-
- const title=
-  prompt("نام اشتراک:",v.title);
-
- if(title===null)return;
-
- const days=
-  prompt("مدت به روز:",v.days);
-
- if(days===null)return;
-
- const price=
-  prompt("قیمت:",v.price);
-
- if(price===null)return;
-
- const downloads=
-  prompt(
-   "تعداد دانلود - صفر نامحدود:",
-   v.downloads
-  );
-
- if(downloads===null)return;
-
- v.title=title;
-
- v.days=Number(days)||30;
-
- v.price=Number(price)||0;
-
- v.downloads=Number(downloads)||0;
-
- set(K.vip,plans);
-
- toast("VIP ویرایش شد.");
-
- render();
-}
-
-function deleteVip(id){
-
- if(!confirm("این اشتراک VIP حذف شود؟"))return;
-
- set(
-  K.vip,
-  get(K.vip).filter(x=>x.id!=id)
- );
-
- toast("اشتراک حذف شد.");
-
  render();
 }
 
 function adminNews(){
-
  return `
- <div class="pagebox">
-
- <h1>📰 مدیریت اخبار</h1>
-
- <form class="form"
-  onsubmit="addNews(event)">
-
-  <input id="nTitle"
-   required
-   placeholder="عنوان خبر">
-
-  <input id="nDate"
-   placeholder="تاریخ">
-
-  <textarea id="nText"
-   required
-   placeholder="متن خبر"></textarea>
-
-  <button class="btn">
-   ➕ انتشار خبر
-  </button>
-
- </form>
-
- <hr>
-
- ${get(K.news).map(n=>`
-
-  <div class="notice">
-
-   <b>${esc(n.title)}</b>
-
-   <p class="muted">
-    ${esc(n.text)}
-   </p>
-
-   <button class="mini"
-    onclick="deleteNews(${n.id})">
-    🗑️ حذف
-   </button>
-
-  </div>
-
- `).join("")}
-
- </div>
- `;
+ <div class="pagebox"><h1>📰 مدیریت اخبار</h1>
+ <form class="form" onsubmit="addNews(event)">
+  <input id="nTitle" required placeholder="عنوان خبر">
+  <input id="nDate" placeholder="تاریخ">
+  <textarea id="nText" required placeholder="متن خبر"></textarea>
+  <button class="btn">➕ انتشار خبر</button>
+ </form><hr>
+ ${get(K.news).map(n=>`<div class="notice"><b>${esc(n.title)}</b><p class="muted">${esc(n.text)}</p><button class="mini" onclick="deleteNews(${n.id})">🗑️ حذف</button></div>`).join("")}
+ </div>`;
 }
 
 function addNews(e){
-
  e.preventDefault();
-
  const ns=get(K.news);
-
- ns.unshift({
-
-  id:Date.now(),
-
-  title:
-   document.getElementById("nTitle").value,
-
-  date:
-   document.getElementById("nDate").value||
-   new Date().toLocaleDateString("fa-IR"),
-
-  text:
-   document.getElementById("nText").value
-
- });
-
+ ns.unshift({id:Date.now(),title:document.getElementById("nTitle").value,date:document.getElementById("nDate").value||new Date().toLocaleDateString("fa-IR"),text:document.getElementById("nText").value});
  set(K.news,ns);
-
  toast("خبر منتشر شد 📰");
-
  go("#/admin/news");
 }
 
 function deleteNews(id){
-
  if(!confirm("خبر حذف شود؟"))return;
-
- set(
-  K.news,
-  get(K.news).filter(x=>x.id!=id)
- );
-
+ set(K.news,get(K.news).filter(x=>x.id!=id));
  toast("حذف شد");
-
  render();
 }
 
 function adminOrders(){
-
  const os=get(K.orders);
-
  return `
- <div class="pagebox">
-
- <h1>🛒 مدیریت سفارش‌ها</h1>
-
- ${
-  os.length
-  ?
-  `
-  <table>
-
-  <thead>
-
-  <tr>
-   <th>کد</th>
-   <th>نوع</th>
-   <th>کاربر</th>
-   <th>مبلغ</th>
-   <th>وضعیت</th>
-   <th>عملیات</th>
-  </tr>
-
-  </thead>
-
-  <tbody>
-
-  ${os.map(o=>`
-
-   <tr>
-
-    <td>${o.id}</td>
-
-    <td>
-     ${
-      o.type==="vip"
-      ?"👑 VIP"
-      :"🎮 بازی"
-     }
-    </td>
-
-    <td>${esc(o.user)}</td>
-
-    <td>${money(o.amount)}</td>
-
-    <td>
-     ${statusText(o.status)}
-    </td>
-
-    <td>
-
-     ${
-      o.receipt
-      ?
-      `<button class="mini"
-       onclick="showReceipt(${o.id})">
-       📸 رسید
-      </button>`
-      :
-      "بدون رسید"
-     }
-
-     ${
-      o.status==="review"
-      ?
-      `
-      <button class="mini"
-       onclick="approveOrder(${o.id})">
-       ✅ تأیید
-      </button>
-
-      <button class="mini danger"
-       onclick="rejectOrder(${o.id})">
-       ❌ رد
-      </button>
-      `
-      :""
-     }
-
-    </td>
-
-   </tr>
-
-  `).join("")}
-
-  </tbody>
-
-  </table>
-  `
-  :
-  `<div class="notice">
-   سفارشی وجود ندارد.
-  </div>`
- }
-
- </div>
- `;
+ <div class="pagebox"><h1>🛒 مدیریت سفارش‌ها</h1>
+ ${os.length?`<table><thead><tr><th>کد</th><th>کاربر</th><th>مبلغ</th><th>وضعیت</th><th>عملیات</th></tr></thead><tbody>
+ ${os.map(o=>`<tr><td>${o.id}</td><td>${esc(o.user)}</td><td>${money(o.amount)}</td><td>${statusText(o.status)}</td><td>
+ ${o.receipt?`<button class="mini" onclick="showReceipt(${o.id})">📸 رسید</button>`:"بدون رسید"}
+ ${o.status==="review"?`<button class="mini" onclick="approveOrder(${o.id})">✅ تأیید</button><button class="mini danger" onclick="rejectOrder(${o.id})">❌ رد</button>`:""}
+ </td></tr>`).join("")}
+ </tbody></table>`:"<div class='notice'>سفارشی وجود ندارد.</div>"}
+ </div>`;
 }
 
 function showReceipt(id){
-
- const o=get(K.orders)
-  .find(x=>x.id==id);
-
- if(!o?.receipt){
-
-  toast("رسیدی وجود ندارد.");
-
-  return;
- }
-
+ const o=get(K.orders).find(x=>x.id==id);
+ if(!o?.receipt){toast("رسیدی وجود ندارد.");return}
  const w=window.open();
-
- if(!w){
-
-  toast("مرورگر اجازه پنجره جدید نداد.");
-
-  return;
- }
-
- w.document.write(`
-
-  <title>رسید ${id}</title>
-
-  <body style="
-   background:#111;
-   color:white;
-   text-align:center">
-
-   <h2>
-    رسید سفارش ${id}
-   </h2>
-
-   <img
-    src="${o.receipt}"
-    style="
-     max-width:95%;
-     max-height:85vh">
-
-  </body>
-
- `);
+ if(!w){toast("مرورگر اجازه پنجره جدید نداد.");return}
+ w.document.write(`<title>رسید ${id}</title><body style="background:#111;color:white;text-align:center"><h2>رسید سفارش ${id}</h2><img src="${o.receipt}" style="max-width:95%;max-height:85vh"></body>`);
 }
 
 function approveOrder(id){
-
  const os=get(K.orders);
-
  const o=os.find(x=>x.id==id);
-
  if(!o)return;
-
  o.status="paid";
-
- if(o.type==="game"){
-
-  const gs=get(K.games);
-
-  const g=gs.find(x=>x.id==o.gameId);
-
-  if(g){
-
-   g.sales=
-    Number(g.sales||0)+1;
-
-   set(K.games,gs);
-  }
- }
-
- if(o.type==="vip"){
-
-  const users=get(K.users);
-
-  const u=users.find(x=>
-   x.id===o.userId ||
-   x.name===o.user
-  );
-
-  if(u){
-
-   const now=Date.now();
-
-   const current=
-    Number(u.vipUntil||0)>now
-    ?Number(u.vipUntil)
-    :now;
-
-   u.vipUntil=
-    current+
-    Number(o.days||30)*86400000;
-
-   u.vipDownloads=
-    Number(o.downloads||0);
-
-   set(K.users,users);
-
-   if(
-    currentUser() &&
-    (
-     currentUser().id===u.id ||
-     currentUser().name===u.name
-    )
-   ){
-
-    localStorage.mbUser=
-     JSON.stringify(u);
-   }
-  }
- }
-
  set(K.orders,os);
-
  toast("سفارش تأیید شد ✅");
-
  render();
 }
 
 function rejectOrder(id){
-
  const os=get(K.orders);
-
  const o=os.find(x=>x.id==id);
-
  if(!o)return;
-
  o.status="rejected";
-
  set(K.orders,os);
-
  toast("سفارش رد شد ❌");
-
  render();
 }
 
 function downloadProduct(id){
-
- const os=get(K.orders);
-
- const o=os.find(x=>x.id==id);
-
+ const o=get(K.orders).find(x=>x.id==id);
  if(!o)return;
-
- if(o.status!=="paid"){
-
-  toast("ابتدا سفارش باید تأیید شود.");
-
-  return;
- }
-
- const g=get(K.games)
-  .find(x=>x.id==o.gameId);
-
- if(!g?.file){
-
-  toast("لینک دانلود محصول موجود نیست.");
-
-  return;
- }
-
- const gs=get(K.games);
-
- const real=gs.find(x=>x.id==g.id);
-
- real.downloads=
-  Number(real.downloads||0)+1;
-
- set(K.games,gs);
-
- window.open(
-  g.file,
-  "_blank"
- );
-
- toast("دانلود شروع شد 📥");
+ const g=get(K.games).find(x=>x.id==o.gameId);
+ if(!g?.file){toast("فایل محصول در دسترس نیست.");return}
+ const a=document.createElement("a");
+ a.href=g.file;
+ a.download=(g.title||"MBMODS")+"-file";
+ document.body.appendChild(a);
+ a.click();
+ a.remove();
 }
 
 function adminUsers(){
-
  const us=get(K.users);
-
  return `
- <div class="pagebox">
-
- <h1>👥 کاربران</h1>
-
- <table>
-
- <thead>
-
- <tr>
-  <th>نام</th>
-  <th>موبایل</th>
-  <th>VIP</th>
-  <th>عملیات</th>
- </tr>
-
- </thead>
-
- <tbody>
-
- ${us.map(u=>`
-
-  <tr>
-
-   <td>${esc(u.name)}</td>
-
-   <td>${esc(u.phone)}</td>
-
-   <td>
-
-    ${
-     u.vipUntil&&
-     Number(u.vipUntil)>Date.now()
-
-     ?
-     `<span class="ok">
-      👑 فعال
-     </span>`
-
-     :
-     "ندارد"
-    }
-
-   </td>
-
-   <td>
-
-    <button
-     class="mini danger"
-     onclick="deleteUser(${u.id})">
-     حذف
-    </button>
-
-   </td>
-
-  </tr>
-
- `).join("")}
-
- </tbody>
-
- </table>
-
- </div>
- `;
+ <div class="pagebox"><h1>👥 کاربران</h1>
+ <table><thead><tr><th>نام</th><th>موبایل</th><th>عملیات</th></tr></thead><tbody>
+ ${us.map(u=>`<tr><td>${esc(u.name)}</td><td>${esc(u.phone)}</td><td><button class="mini danger" onclick="deleteUser(${u.id})">حذف</button></td></tr>`).join("")}
+ </tbody></table></div>`;
 }
 
 function deleteUser(id){
-
  if(!confirm("کاربر حذف شود؟"))return;
-
- set(
-  K.users,
-  get(K.users).filter(x=>x.id!=id)
- );
-
+ set(K.users,get(K.users).filter(x=>x.id!=id));
  toast("کاربر حذف شد");
-
  render();
 }
 
 function adminSettings(){
-
  const s=get(K.settings);
-
  return `
- <div class="pagebox">
-
- <h1>💳 تنظیمات پرداخت</h1>
-
- <div class="notice">
-
-  اینجا اطلاعاتی را که خریدار هنگام ثبت سفارش می‌بیند وارد کن.
-
-  <br>
-
-  اطلاعات در LocalStorage همین مرورگر ذخیره می‌شود.
-
- </div>
-
- <form class="form"
-  onsubmit="saveSettings(event)">
-
-  <label>💳 شماره کارت</label>
-
-  <input
-   id="payCard"
-   inputmode="numeric"
-   placeholder="مثلاً 6037-...."
-   value="${esc(s.card)}">
-
-  <label>👤 نام صاحب کارت</label>
-
-  <input
-   id="payOwner"
-   placeholder="نام صاحب کارت"
-   value="${esc(s.owner)}">
-
-  <label>🏦 شماره حساب</label>
-
-  <input
-   id="payAccount"
-   placeholder="اختیاری"
-   value="${esc(s.account)}">
-
-  <label>📱 شماره تماس</label>
-
-  <input
-   id="payPhone"
-   placeholder="اختیاری"
-   value="${esc(s.phone)}">
-
-  <label>📝 توضیح پرداخت</label>
-
-  <textarea
-   id="payDesc"
-   placeholder="مثلاً بعد از واریز، رسید را از بخش سفارش‌ها ارسال کنید.">${esc(s.description)}</textarea>
-
-  <button class="btn red">
-   💾 ذخیره تنظیمات پرداخت
-  </button>
-
- </form>
-
- <br>
-
- <button class="mini danger"
-  onclick="resetAll()">
-  ⚠️ پاک کردن تمام اطلاعات سایت
- </button>
-
- </div>
- `;
+ <div class="pagebox"><h1>💳 تنظیمات پرداخت</h1>
+ <div class="notice">اینجا اطلاعاتی را که خریدار هنگام ثبت سفارش می‌بیند وارد کن.<br>اطلاعات در LocalStorage همین مرورگر ذخیره می‌شود.</div>
+ <form class="form" onsubmit="saveSettings(event)">
+  <label>💳 شماره کارت</label><input id="payCard" inputmode="numeric" placeholder="مثلاً 6037-...." value="${esc(s.card)}">
+  <label>👤 نام صاحب کارت</label><input id="payOwner" placeholder="نام صاحب کارت" value="${esc(s.owner)}">
+  <label>🏦 شماره حساب</label><input id="payAccount" placeholder="اختیاری" value="${esc(s.account)}">
+  <label>📱 شماره تماس</label><input id="payPhone" placeholder="اختیاری" value="${esc(s.phone)}">
+  <label>📝 توضیح پرداخت</label><textarea id="payDesc" placeholder="مثلاً بعد از واریز، رسید را از بخش سفارش‌ها ارسال کنید.">${esc(s.description)}</textarea>
+  <button class="btn red">💾 ذخیره تنظیمات پرداخت</button>
+ </form><br>
+ <button class="mini danger" onclick="resetAll()">⚠️ پاک کردن تمام اطلاعات سایت</button>
+ </div>`;
 }
 
 function saveSettings(e){
-
  e.preventDefault();
-
  const s={
-
-  card:
-   document.getElementById("payCard").value.trim(),
-
-  owner:
-   document.getElementById("payOwner").value.trim(),
-
-  account:
-   document.getElementById("payAccount").value.trim(),
-
-  phone:
-   document.getElementById("payPhone").value.trim(),
-
-  description:
-   document.getElementById("payDesc").value.trim()
-
+  card:document.getElementById("payCard").value.trim(),
+  owner:document.getElementById("payOwner").value.trim(),
+  account:document.getElementById("payAccount").value.trim(),
+  phone:document.getElementById("payPhone").value.trim(),
+  description:document.getElementById("payDesc").value.trim()
  };
-
  set(K.settings,s);
-
  toast("تنظیمات پرداخت ذخیره شد 💳");
-
  go("#/admin/settings");
 }
 
 function resetAll(){
-
- if(!confirm(
-  "همه بازی‌ها، سفارش‌ها، کاربران و تنظیمات پاک شوند؟"
- ))return;
-
- Object.values(K).forEach(k=>
-  localStorage.removeItem(k)
- );
-
+ if(!confirm("همه بازی‌ها، سفارش‌ها، کاربران و تنظیمات پاک شوند؟"))return;
+ Object.values(K).forEach(k=>localStorage.removeItem(k));
  localStorage.removeItem("mbUser");
  localStorage.removeItem("mbAdmin");
-
  location.reload();
 }
 
-function adminBackup(){
-
- return `
- <div class="pagebox">
-
- <h1>💾 پشتیبان‌گیری</h1>
-
- <div class="notice">
-
-  از اطلاعات سایت یک فایل JSON بساز و ذخیره کن.
-  بعداً می‌توانی آن را دوباره وارد کنی.
-
- </div>
-
- <div class="actions">
-
-  <button class="btn"
-   onclick="backupData()">
-   📥 دانلود بکاپ
-  </button>
-
-  <label class="btn dark">
-
-   📤 بازیابی بکاپ
-
-   <input
-    type="file"
-    accept=".json"
-    style="display:none"
-    onchange="restoreData(event)">
-
-  </label>
-
- </div>
-
- </div>
- `;
-}
-
-function backupData(){
-
- const data={};
-
- Object.values(K).forEach(k=>{
-  data[k]=get(k,[]);
- });
-
- const blob=new Blob(
-  [JSON.stringify(data,null,2)],
-  {type:"application/json"}
- );
-
- const url=URL.createObjectURL(blob);
-
- const a=document.createElement("a");
-
- a.href=url;
-
- a.download=
-  "mb-mods-backup-"+Date.now()+".json";
-
- a.click();
-
- URL.revokeObjectURL(url);
-
- toast("بکاپ ساخته شد 💾");
-}
-
-function restoreData(e){
-
- const file=e.target.files[0];
-
- if(!file)return;
-
- const reader=new FileReader();
-
- reader.onload=()=>{
-
-  try{
-
-   const data=JSON.parse(reader.result);
-
-   Object.values(K).forEach(k=>{
-
-    if(data[k]!==undefined){
-
-     set(k,data[k]);
-
-    }
-
-   });
-
-   toast("بکاپ بازیابی شد ✅");
-
-   render();
-
-  }catch(err){
-
-   toast("فایل بکاپ خراب است ❌");
-
-  }
-
- };
-
- reader.readAsText(file);
-}
-
 function profile(){
-
- if(!currentUser()){
-
-  return shell(
-   "👤 حساب",
-   `<button class="btn"
-    onclick="go('#/login')">
-    ورود
-   </button>`
-  );
+ if(!localStorage.mbUser){
+  return shell("👤 حساب",`<button class="btn" onclick="go('#/login')">ورود</button>`);
  }
-
- const u=currentUser();
-
+ const u=JSON.parse(localStorage.mbUser);
  return `
- <div class="pagebox">
-
-  <h1>👤 پروفایل</h1>
-
-  <div class="notice">
-
-   نام کاربری:
-   <b>${esc(u.name)}</b>
-
-   <br>
-
-   موبایل:
-   <b>${esc(u.phone)}</b>
-
-   <br>
-
-   وضعیت VIP:
-
-   ${
-    u.vipUntil&&
-    Number(u.vipUntil)>Date.now()
-
-    ?
-    `<b class="ok">
-     👑 فعال
-    </b>`
-
-    :
-    `<b>غیرفعال</b>`
-   }
-
-  </div>
-
-  ${
-   isVip()
-   ?
-   `<div class="notice vipbox">
-
-    👑 VIP فعال
-
-    <br>
-
-    باقی‌مانده:
-    <b>${formatRemaining(vipRemaining())}</b>
-
-   </div>`
-   :""
-  }
-
-  <div class="actions">
-
-   <button class="btn"
-    onclick="go('#/vip')">
-    👑 مدیریت VIP
-   </button>
-
-   <button class="btn red"
-    onclick="logoutUser()">
-    🚪 خروج
-   </button>
-
-  </div>
-
- </div>
- `;
+ <div class="pagebox"><h1>👤 پروفایل</h1>
+ <div class="notice">نام کاربری: <b>${esc(u.name)}</b><br>موبایل: <b>${esc(u.phone)}</b></div>
+ <button class="btn red" onclick="logoutUser()">🚪 خروج</button>
+ </div>`;
 }
 
 function logoutUser(){
-
  localStorage.removeItem("mbUser");
-
  toast("از حساب خارج شدی.");
-
  go("#/home");
 }
 
 function shell(title,body){
-
- return `
- <div class="pagebox">
-
-  <h1>${title}</h1>
-
-  ${body}
-
- </div>
- `;
+ return `<div class="pagebox"><h1>${title}</h1>${body}</div>`;
 }
 
 function render(){
-
- const hash=
-  location.hash||"#/home";
-
- const p=
-  hash
-  .replace(/^#\//,"")
-  .split("/");
-
+ const hash=location.hash||"#/home";
+ const p=hash.replace(/^#\//,"").split("/");
  let html="";
-
- if(p[0]==="home"||!p[0])
-  html=home();
-
- else if(p[0]==="games"&&p[1])
-  html=gameDetail(p[1]);
-
- else if(p[0]==="games")
-  html=games();
-
- else if(p[0]==="news"&&p[1])
-  html=newsDetail(p[1]);
-
- else if(p[0]==="news")
-  html=news();
-
- else if(p[0]==="search")
-  html=searchPage();
-
- else if(p[0]==="favorites")
-  html=favorites();
-
- else if(p[0]==="login")
-  html=login();
-
- else if(p[0]==="register")
-  html=register();
-
- else if(p[0]==="orders")
-  html=orders();
-
- else if(p[0]==="vip")
-  html=vipPage();
-
- else if(p[0]==="profile")
-  html=profile();
-
- else if(p[0]==="admin"&&!p[1])
-  html=admin();
-
- else if(p[0]==="admin"&&p[1]==="login")
-  html=adminLogin();
-
+ if(p[0]==="home"||!p[0])html=home();
+ else if(p[0]==="games"&&p[1])html=gameDetail(p[1]);
+ else if(p[0]==="games")html=games();
+ else if(p[0]==="news"&&p[1])html=newsDetail(p[1]);
+ else if(p[0]==="news")html=news();
+ else if(p[0]==="search")html=searchPage();
+ else if(p[0]==="favorites")html=favorites();
+ else if(p[0]==="login")html=login();
+ else if(p[0]==="register")html=register();
+ else if(p[0]==="orders")html=orders();
+ else if(p[0]==="profile")html=profile();
+ else if(p[0]==="admin"&&!p[1])html=admin();
+ else if(p[0]==="admin"&&p[1]==="login")html=adminLogin();
  else if(p[0]==="admin"&&p[1]==="games"){
-
-  if(!localStorage.mbAdmin){
-   go("#/admin/login");
-   return;
-  }
-
+  if(!localStorage.mbAdmin){go("#/admin/login");return}
   html=adminGames();
  }
-
- else if(p[0]==="admin"&&p[1]==="coupons"){
-
-  if(!localStorage.mbAdmin){
-   go("#/admin/login");
-   return;
-  }
-
-  html=adminCoupons();
- }
-
- else if(p[0]==="admin"&&p[1]==="vip"){
-
-  if(!localStorage.mbAdmin){
-   go("#/admin/login");
-   return;
-  }
-
-  html=adminVip();
- }
-
  else if(p[0]==="admin"&&p[1]==="news"){
-
-  if(!localStorage.mbAdmin){
-   go("#/admin/login");
-   return;
-  }
-
+  if(!localStorage.mbAdmin){go("#/admin/login");return}
   html=adminNews();
  }
-
  else if(p[0]==="admin"&&p[1]==="orders"){
-
-  if(!localStorage.mbAdmin){
-   go("#/admin/login");
-   return;
-  }
-
+  if(!localStorage.mbAdmin){go("#/admin/login");return}
   html=adminOrders();
  }
-
  else if(p[0]==="admin"&&p[1]==="users"){
-
-  if(!localStorage.mbAdmin){
-   go("#/admin/login");
-   return;
-  }
-
+  if(!localStorage.mbAdmin){go("#/admin/login");return}
   html=adminUsers();
  }
-
  else if(p[0]==="admin"&&p[1]==="settings"){
-
-  if(!localStorage.mbAdmin){
-   go("#/admin/login");
-   return;
-  }
-
+  if(!localStorage.mbAdmin){go("#/admin/login");return}
   html=adminSettings();
  }
-
- else if(p[0]==="admin"&&p[1]==="backup"){
-
-  if(!localStorage.mbAdmin){
-   go("#/admin/login");
-   return;
-  }
-
-  html=adminBackup();
- }
-
- else
-  html=home();
-
+ else html=home();
  document.getElementById("app").innerHTML=html;
-
  window.scrollTo(0,0);
 }
 
-window.addEventListener(
- "hashchange",
- render
-);
-
+window.addEventListener("hashchange",render);
 render();
-
 </script>
-
 </body>
- </html>
+    </html>
