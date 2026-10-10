@@ -831,18 +831,6 @@ render();
   }
 })();
 </script>
-    const { data, error } = await mbSupabase
-      .from('news')
-      .select('*')
-      .eq('published', true);
-
-    if (error) {
-      console.error('خطای دریافت اخبار:', error.message);
-      return [];
-    }
-
-    return data || [];
-  }
 </script>
     <!-- نمایش بازی‌ها و اخبار Supabase در سایت MB MODS -->
 <script>
@@ -904,6 +892,75 @@ render();
     });
   } catch (err) {
     console.error('خطا در نمایش اطلاعات Supabase:', err);
+  }
+})();
+</script>
+    <script>
+(async function () {
+  const app = document.getElementById('app');
+
+  try {
+    const [gamesResult, newsResult] = await Promise.all([
+      mbSupabase.from('games').select('*').eq('published', true),
+      mbSupabase.from('news').select('*').eq('published', true)
+    ]);
+
+    if (gamesResult.error) throw gamesResult.error;
+    if (newsResult.error) throw newsResult.error;
+
+    const cloudGames = (gamesResult.data || []).map(g => ({
+      id: 'cloud-' + g.id,
+      _fromSupabase: true,
+      title: g.title || 'بازی جدید',
+      icon: '🎮',
+      genre: 'بازی',
+      platform: 'Android',
+      version: '—',
+      size: '—',
+      price: Number(g.price || 0),
+      old: 0,
+      cover: g.image_url || '',
+      desc: g.description || '',
+      guide: 'اطلاعات راهنما به‌زودی اضافه می‌شود.',
+      file: g.game_url || '',
+      downloads: 0,
+      views: 0,
+      sales: 0,
+      vipOnly: Boolean(g.is_vip)
+    }));
+
+    const cloudNews = (newsResult.data || []).map(n => ({
+      id: 'cloud-' + n.id,
+      _fromSupabase: true,
+      title: n.title || 'خبر جدید',
+      text: n.description || '',
+      date: n.created_at
+        ? new Date(n.created_at).toLocaleDateString('fa-IR')
+        : '',
+      image_url: n.image_url || '',
+      article_url: n.article_url || ''
+    }));
+
+    const localGames = get(K.games).filter(g => !g._fromSupabase);
+    const localNews = get(K.news).filter(n => !n._fromSupabase);
+
+    set(K.games, [...cloudGames, ...localGames]);
+    set(K.news, [...cloudNews, ...localNews]);
+
+    render();
+
+    console.log('Supabase loaded:', {
+      games: cloudGames.length,
+      news: cloudNews.length
+    });
+  } catch (err) {
+    console.error('Supabase error:', err);
+    if (app) {
+      const msg = document.createElement('p');
+      msg.className = 'notice';
+      msg.textContent = 'دریافت اطلاعات آنلاین ناموفق بود؛ اتصال دیتابیس را بررسی کنید.';
+      app.prepend(msg);
+    }
   }
 })();
 </script>
