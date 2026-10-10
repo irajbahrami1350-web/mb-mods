@@ -862,106 +862,99 @@ render();
       sales: 0,
       vipOnly: Boolean(g.is_vip)
     }));
+<!-- اتصال Supabase به سایت MB MODS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    // تبدیل اخبار دیتابیس به قالب اخبار سایت
-    const cloudNews = (dbNews || []).map(n => ({
-      id: 'db-news-' + n.id,
-      _fromSupabase: true,
-      title: n.title || 'خبر جدید',
-      text: n.description || '',
-      date: n.created_at
-        ? new Date(n.created_at).toLocaleDateString('fa-IR')
-        : '',
-      image_url: n.image_url || '',
-      article_url: n.article_url || ''
+<script>
+(() => {
+  const SUPABASE_URL = "https://czevezkfksyymooauuzm.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_nJsPgF8_Rn653T0r2_ndOQ_h8vRv3hi";
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+  window.mbSupabase = supabaseClient;
+
+  // دریافت بازی‌های منتشرشده
+  async function loadCloudGames() {
+    const { data, error } = await supabaseClient
+      .from("games")
+      .select("*")
+      .eq("published", true)
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("خطا در دریافت بازی‌ها:", error.message);
+      return [];
+    }
+
+    return (data || []).map(game => ({
+      ...game,
+      id: "db-game-" + game.id,
+      name: game.title,
+      title: game.title,
+      description: game.description || "",
+      image: game.image_url || "",
+      file: game.game_url || "",
+      price: Number(game.price || 0),
+      vip: Boolean(game.is_vip)
     }));
-
-    // نگه‌داشتن محتوای فعلی و جایگزینی نسخه‌های قبلی ابری
-    const localGames = get(K.games).filter(g => !g._fromSupabase);
-    const localNews = get(K.news).filter(n => !n._fromSupabase);
-
-    set(K.games, [...cloudGames, ...localGames]);
-    set(K.news, [...cloudNews, ...localNews]);
-
-    // به‌روزرسانی صفحه با اطلاعات دریافتی
-    render();
-
-    console.log('MB MODS: دیتابیس بارگذاری شد', {
-      games: cloudGames.length,
-      news: cloudNews.length
-    });
-  } catch (err) {
-    console.error('خطا در نمایش اطلاعات Supabase:', err);
   }
-})();
-</script>
-    <script>
-(async function () {
-  const app = document.getElementById('app');
 
-  try {
-    const [gamesResult, newsResult] = await Promise.all([
-      mbSupabase.from('games').select('*').eq('published', true),
-      mbSupabase.from('news').select('*').eq('published', true)
-    ]);
+  // دریافت اخبار منتشرشده
+  async function loadCloudNews() {
+    const { data, error } = await supabaseClient
+      .from("news")
+      .select("*")
+      .eq("published", true)
+      .order("created_at", { ascending: false });
 
-    if (gamesResult.error) throw gamesResult.error;
-    if (newsResult.error) throw newsResult.error;
+    if (error) {
+      console.error("خطا در دریافت اخبار:", error.message);
+      return [];
+    }
 
-    const cloudGames = (gamesResult.data || []).map(g => ({
-      id: 'cloud-' + g.id,
-      _fromSupabase: true,
-      title: g.title || 'بازی جدید',
-      icon: '🎮',
-      genre: 'بازی',
-      platform: 'Android',
-      version: '—',
-      size: '—',
-      price: Number(g.price || 0),
-      old: 0,
-      cover: g.image_url || '',
-      desc: g.description || '',
-      guide: 'اطلاعات راهنما به‌زودی اضافه می‌شود.',
-      file: g.game_url || '',
-      downloads: 0,
-      views: 0,
-      sales: 0,
-      vipOnly: Boolean(g.is_vip)
+    return (data || []).map(item => ({
+      ...item,
+      id: "db-news-" + item.id,
+      title: item.title,
+      text: item.description || "",
+      image: item.image_url || "",
+      url: item.article_url || ""
     }));
+  }
 
-    const cloudNews = (newsResult.data || []).map(n => ({
-      id: 'cloud-' + n.id,
-      _fromSupabase: true,
-      title: n.title || 'خبر جدید',
-      text: n.description || '',
-      date: n.created_at
-        ? new Date(n.created_at).toLocaleDateString('fa-IR')
-        : '',
-      image_url: n.image_url || '',
-      article_url: n.article_url || ''
-    }));
+  // بارگذاری اطلاعات ابری
+  async function loadMBCloudData() {
+    try {
+      const [games, news] = await Promise.all([
+        loadCloudGames(),
+        loadCloudNews()
+      ]);
 
-    const localGames = get(K.games).filter(g => !g._fromSupabase);
-    const localNews = get(K.news).filter(n => !n._fromSupabase);
+      window.mbCloudGames = games;
+      window.mbCloudNews = news;
 
-    set(K.games, [...cloudGames, ...localGames]);
-    set(K.news, [...cloudNews, ...localNews]);
+      console.log("بازی‌های ابری:", games);
+      console.log("اخبار ابری:", news);
 
-    render();
+      // اطلاع از موفقیت بارگذاری
+      window.dispatchEvent(new CustomEvent("mb-cloud-loaded", {
+        detail: { games, news }
+      }));
 
-    console.log('Supabase loaded:', {
-      games: cloudGames.length,
-      news: cloudNews.length
-    });
-  } catch (err) {
-    console.error('Supabase error:', err);
-    if (app) {
-      const msg = document.createElement('p');
-      msg.className = 'notice';
-      msg.textContent = 'دریافت اطلاعات آنلاین ناموفق بود؛ اتصال دیتابیس را بررسی کنید.';
-      app.prepend(msg);
+      return { games, news };
+    } catch (error) {
+      console.error("خطای اتصال به Supabase:", error);
+      return { games: [], news: [] };
     }
   }
+
+  window.loadMBCloudData = loadMBCloudData;
+
+  loadMBCloudData();
 })();
 </script>
 </body>
